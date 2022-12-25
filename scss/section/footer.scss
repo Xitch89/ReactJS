@@ -1,0 +1,33 @@
+.footer {
+  border-top: 1px solid $light-brown;
+  margin: 0 60px 0 60px;
+
+  a {
+    font: 400 12px/30px $old-Standard;
+    color: $yellow;
+    margin-left: 5px;
+    @include transition(0.2s);
+    &:hover {
+      color: $pistachio;
+    }
+  }
+
+  &_conteiner {
+    @include flex-spacebeetwen;
+    background: $background-color;
+    color: $gray;
+    height: 80px;
+    p {
+      font: 400 14px/18px $old-Standard;
+      color: $gray;
+    }
+  }
+  &_powered {
+    @include flex-centr-row;
+  }
+  &_right-ref-border {
+    border-left: 1px solid $light-brown;
+    border-right: 1px solid $light-brown;
+    padding: 0 5px 0 5px;
+  }
+}
