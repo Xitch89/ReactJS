@@ -89,14 +89,14 @@ h6 {
 /*color*/
 /*Font*/
 header {
-  position: absolute;
+  position: sticky;
+  /*position: relative;*/
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   height: 80px;
   background-color: rgba(0, 0, 0, 0.2);
-  position: sticky;
   top: 0;
   z-index: 5;
   border-collapse: collapse;
@@ -198,9 +198,9 @@ ul {
     height: 35px;
   }
 }
-@media (max-width: 565px) {
+@media (max-width: 400px) {
   .transparent-headr_buy-template {
-    margin-right: 15px;
+    margin-right: 30px;
     width: 90px;
     height: 30px;
   }
@@ -543,6 +543,9 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 20px;
   grid-column-gap: 20px;
+  /*@media (max-width: $phones) {
+    @include flex-grid(25px, 15px, 160px);
+  }*/
 }
 @media (max-width: 767px) {
   .example-layouts_wraper {
@@ -552,7 +555,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 565px) {
   .example-layouts_wraper {
     display: grid;
     grid-row-gap: 25px;
@@ -684,6 +687,18 @@ body {
   left: 30%;
 }
 @media (max-width: 767px) {
+  .follow-social_items_vector-img {
+    left: 40%;
+  }
+}
+@media (max-width: 565px) {
+  .follow-social_items_vector-img {
+    width: 35px;
+    height: 35px;
+    left: 40%;
+  }
+}
+@media (max-width: 767px) {
   .follow-social_items_follow-me {
     padding: 0;
     border: none;
@@ -695,7 +710,7 @@ body {
 }
 @media (max-width: 565px) {
   .follow-social_items_follow-me {
-    border-bottom: 0;
+    border-bottom: 1px solid #4b4136;
   }
 }
 @media (max-width: 400px) {
@@ -712,16 +727,17 @@ body {
   border-top: 1px solid #4b4136;
   border-bottom: 1px solid #4b4136;
 }
-@media (max-width: 767px) {
-  .follow-social_items_last {
-    border-top: 0;
-    border-bottom: 1px solid #4b4136;
-  }
-}
 @media (max-width: 565px) {
   .follow-social_items_last {
     border-top: 1px solid #4b4136;
     border-bottom: 1px solid #4b4136;
+  }
+}
+@media (max-width: 767px) {
+  .follow-social_items_last {
+    border-top: 0;
+    border-bottom: 1px solid #4b4136;
+    padding-bottom: 20px;
   }
 }
 @media (max-width: 400px) {
@@ -751,7 +767,7 @@ body {
     display: grid;
     grid-row-gap: 15px;
     grid-column-gap: 0;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
   }
 }
 @media (max-width: 565px) {

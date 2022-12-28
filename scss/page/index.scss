@@ -84,9 +84,12 @@
     @media (max-width: $tablets) {
       @include flex-grid(25px, 15px, 180px);
     }
-    @media (max-width: $phones) {
+    @media (max-width: $phones-big) {
       @include flex-grid(25px, 15px, 160px);
     }
+    /*@media (max-width: $phones) {
+      @include flex-grid(25px, 15px, 160px);
+    }*/
     @media (max-width: $phones-mini) {
       @include flex-grid(15px, 10px, 130px);
     }
@@ -183,6 +186,14 @@
       height: 45px;
       top: 20px;
       left: 30%;
+      @media (max-width: $tablets) {
+        left: 40%;
+      }
+      @media (max-width: $phones-big) {
+        width: 35px;
+        height: 35px;
+        left: 40%;
+      }
     }
     &_follow-me {
       @media (max-width: $tablets) {
@@ -194,7 +205,7 @@
         border-bottom: 1px solid $light-brown;
       }
       @media (max-width: $phones-big) {
-        border-bottom: 0;
+        border-bottom: 1px solid $light-brown;
       }
       @media (max-width: $phones) {
         border-bottom: 1px solid $light-brown;
@@ -206,13 +217,14 @@
     &_last {
       border-top: 1px solid $light-brown;
       border-bottom: 1px solid $light-brown;
-      @media (max-width: $tablets) {
-        border-top: 0;
-        border-bottom: 1px solid $light-brown;
-      }
       @media (max-width: $phones-big) {
         border-top: 1px solid $light-brown;
         border-bottom: 1px solid $light-brown;
+      }
+      @media (max-width: $tablets) {
+        border-top: 0;
+        border-bottom: 1px solid $light-brown;
+        padding-bottom: 20px;
       }
       @media (max-width: $phones) {
         border-top: 0;
@@ -233,7 +245,7 @@
       margin: 0 60px 70px 60px;
     }
     @media (max-width: $tablets) {
-      @include flex-grid(15px, 0, 200px);
+      @include flex-grid(15px, 0, 165px);
     }
     @media (max-width: $phones-big) {
       margin: 0 30px 70px 30px;
