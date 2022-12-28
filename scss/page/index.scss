@@ -23,6 +23,9 @@
     color: $white;
     text-align: center;
     padding-bottom: 35px;
+    @media (max-width: $phones-big) {
+      font: 300 35px/40px $old-Standard;
+    }
   }
   &_link-layout {
     display: flex;
@@ -42,6 +45,10 @@
       color: $pistachio;
       background: $dark-green;
     }
+    @media (max-width: $phones-big) {
+      width: 110px;
+      height: 40px;
+    }
   }
 }
 
@@ -53,9 +60,18 @@
     font: 400 12px/22px $old-Standard;
     color: $gray;
     margin: 120px 0 10px 0;
+    @media (max-width: $phones) {
+      margin: 60px 0 10px 0;
+    }
+    @media (max-width: $phones-mini) {
+      margin: 35px 0 10px 0;
+    }
   }
   &_container {
     margin: 0 60px 70px 60px;
+    @media (max-width: $phones-big) {
+      margin: 0 30px 70px 30px;
+    }
     @media (max-width: $phones-mini) {
       margin: 40px 15px;
     }
@@ -68,6 +84,12 @@
     @media (max-width: $tablets) {
       @include flex-grid(25px, 15px, 180px);
     }
+    @media (max-width: $phones) {
+      @include flex-grid(25px, 15px, 160px);
+    }
+    @media (max-width: $phones-mini) {
+      @include flex-grid(15px, 10px, 130px);
+    }
   }
 }
 
@@ -75,6 +97,12 @@
   font: 400 50px/60px $old-Standard;
   color: $yellow;
   margin-bottom: 60px;
+  @media (max-width: $phones) {
+    font: 300 30px/40px $old-Standard;
+  }
+  @media (max-width: $phones-mini) {
+    margin-bottom: 35px;
+  }
 }
 
 .bottom-block {
@@ -93,16 +121,25 @@
       height: 40px;
     }
   }
-  &_wraper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  &_container {
     margin: 0 120px 115px 120px;
     @media (max-width: $tablets-big) {
       margin: 0 60px 70px 60px;
     }
     @media (max-width: $tablets) {
-      @include flex-grid(50px, 20px, 305px);
+      margin: 0 30px 70px 30px;
     }
+  }
+  &_wraper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media (max-width: $tablets) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    /*@media (max-width: $phones-big) {
+      grid-template-columns: repeat(1, 1fr);
+    }*/
   }
   &_yellow-text {
     font: 400 24px/34px $old-Standard;
@@ -142,10 +179,48 @@
     padding-bottom: 20px;
     &_vector-img {
       position: relative;
-      width: 50px;
-      height: 50px;
+      width: 45px;
+      height: 45px;
       top: 20px;
-      left: 40%;
+      left: 30%;
+    }
+    &_follow-me {
+      @media (max-width: $tablets) {
+        padding: 0;
+        border: none;
+        text-align: center;
+        grid-column: 1 / 3;
+        grid-row: 3 / 2;
+        border-bottom: 1px solid $light-brown;
+      }
+      @media (max-width: $phones-big) {
+        border-bottom: 0;
+      }
+      @media (max-width: $phones) {
+        border-bottom: 1px solid $light-brown;
+      }
+      @media (max-width: $phones-mini) {
+        border-bottom: 0;
+      }
+    }
+    &_last {
+      border-top: 1px solid $light-brown;
+      border-bottom: 1px solid $light-brown;
+      @media (max-width: $tablets) {
+        border-top: 0;
+        border-bottom: 1px solid $light-brown;
+      }
+      @media (max-width: $phones-big) {
+        border-top: 1px solid $light-brown;
+        border-bottom: 1px solid $light-brown;
+      }
+      @media (max-width: $phones) {
+        border-top: 0;
+        border-bottom: 1px solid $light-brown;
+      }
+      @media (max-width: $phones-mini) {
+        border-top: 1px solid $light-brown;
+      }
     }
   }
   &_wraper {
@@ -158,17 +233,13 @@
       margin: 0 60px 70px 60px;
     }
     @media (max-width: $tablets) {
-      @include flex-grid(40px, 2px, 200px);
-      .follow-me {
-        padding: 0;
-        border: none;
-        text-align: center;
-        grid-column: 1 / 3;
-        grid-row: 3 / 2;
-      }
+      @include flex-grid(15px, 0, 200px);
+    }
+    @media (max-width: $phones-big) {
+      margin: 0 30px 70px 30px;
     }
     @media (max-width: $phones) {
-      @include flex-grid(40px, 2px, 100px);
+      @include flex-grid(40px, 0px, 100px);
     }
   }
   &_yellow-text {
@@ -177,6 +248,15 @@
     padding: 61px 50px 40px 50px;
     @media (max-width: $tablets-big) {
       padding: 45px 50px 40px 50px;
+    }
+    @media (max-width: $tablets) {
+      padding-top: 80px;
+    }
+    @media (max-width: $phones-big) {
+      padding-top: 20px;
+    }
+    @media (max-width: $phones) {
+      font: 300 30px/35px $old-Standard;
     }
   }
   &_soc-img {
@@ -201,10 +281,17 @@
       color: $pistachio;
       background: $dark-green;
     }
+    @media (max-width: $phones-big) {
+      margin-bottom: 40px;
+    }
     @media (max-width: $tablets) {
       display: inline-block;
       margin: 0;
       padding-top: 4px;
+    }
+    @media (max-width: $phones) {
+      width: 120px;
+      height: 45px;
     }
   }
 }
@@ -216,29 +303,48 @@
     font: 400 60px/70px $old-Standard;
     color: $yellow;
     margin-bottom: 20px;
+    @media (max-width: $tablets) {
+      font: 300 40px/50px $old-Standard;
+    }
   }
   &_some-text {
     font: 400 12px/28px $old-Standard;
     color: $gray;
     margin-bottom: 82px;
+    @media (max-width: $tablets) {
+      margin: 0 30px 50px 30px;
+    }
   }
   &_explanation-button {
     margin-bottom: 20px;
     font: 400 14px/20px $old-Standard;
     color: $gray;
+    @media (max-width: $tablets) {
+      margin: 30px;
+    }
   }
 }
 .subscribe {
   @include flex-centr-column;
+  width: 40%;
   margin-bottom: 30px;
+  @media (max-width: $tablets-big) {
+    width: 60%;
+  }
+  @media (max-width: $tablets) {
+    width: 75%;
+    margin-bottom: 0;
+  }
+  @media (max-width: $phones) {
+  }
   input {
-    width: 215%;
+    width: 100%;
     height: 53px;
     padding: 20px;
     @include box-sizing(border-box);
     @include border-top-radius(5px);
     border: 1px solid $light-brown;
-    background: $white;
+    background-color: $white;
     &:hover {
       border: 1px solid $yellow;
     }
@@ -247,7 +353,7 @@
     }
   }
   &_button {
-    width: 215%;
+    width: 100%;
     height: 53px;
     background: $yellow;
     font: 400 18px/25px $old-Standard;
@@ -276,6 +382,10 @@
     @include transition(0.1s);
     &:hover {
       border: 3px solid $light-brown;
+    }
+    @media (max-width: $phones-big) {
+      width: 35px;
+      height: 35px;
     }
   }
 }

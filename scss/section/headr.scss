@@ -4,7 +4,7 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 80px;
+  height: 65px;
   background-color: rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
@@ -87,11 +87,27 @@ ul {
       margin-right: 60px;
     }
   }
+  @media (max-width: $phones-big) {
+    &_buy-template {
+      margin-right: 30px;
+      width: 100px;
+      height: 35px;
+    }
+  }
+  @media (max-width: $phones-big) {
+    &_buy-template {
+      margin-right: 15px;
+      width: 90px;
+      height: 30px;
+    }
+  }
 }
 
 @media (max-width: $tablets-big) {
   .nav-bar {
     position: absolute;
+    width: 147px;
+    height: 52px;
     background-color: rgba(0, 0, 0, 0.8);
     top: 0;
     right: 100%;
@@ -120,6 +136,13 @@ ul {
     border-radius: 5px;
     border: 1px solid $yellow;
     cursor: pointer;
+    @media (max-width: $phones-big) {
+      top: 15px;
+      left: 30px;
+    }
+    @media (max-width: $phones-mini) {
+      left: 15px;
+    }
   }
   .line {
     width: 100%;
