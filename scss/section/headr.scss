@@ -120,6 +120,9 @@ ul {
     justify-content: center;
     align-items: center;
     @include transition-position(position, 2.9s);
+    @media (max-width: $phones-big) {
+      width: 140px;
+    }
   }
   .toggle {
     left: 0;

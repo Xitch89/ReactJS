@@ -224,10 +224,19 @@ ul {
     -ms-transition: position 2.9s;
     -o-transition: position 2.9s;
   }
+}
+@media (max-width: 991px) and (max-width: 565px) {
+  .nav-bar {
+    width: 140px;
+  }
+}
+@media (max-width: 991px) {
   .toggle {
     left: 0;
     box-shadow: 1px 0 15px 2px rgba(0, 0, 0, 0.4);
   }
+}
+@media (max-width: 991px) {
   .toggle-menu {
     background-color: rgba(0, 0, 0, 0.2);
     position: fixed;
