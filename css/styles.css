@@ -90,7 +90,6 @@ h6 {
 /*Font*/
 header {
   position: sticky;
-  /*position: relative;*/
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -124,9 +123,6 @@ ul {
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
   transition: 0.2s;
-  /*@media (max-width: $phones-mini) {
-    margin-left: 15px;
-  }*/
 }
 .transparent-headr_logo:hover {
   color: #00ffc8;
@@ -209,16 +205,14 @@ ul {
 @media (max-width: 991px) {
   .nav-bar {
     position: absolute;
-    width: 147px;
-    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.8);
     top: 0;
     right: 100%;
     height: 100vh;
     width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     -webkit-transition: position 2.9s;
     -moz-transition: position 2.9s;
     -ms-transition: position 2.9s;
@@ -526,7 +520,12 @@ body {
   }
 }
 .example-layouts_container {
-  margin: 0 60px 70px 60px;
+  margin: 0 120px 70px 120px;
+}
+@media (max-width: 991px) {
+  .example-layouts_container {
+    margin: 0 60px 70px 60px;
+  }
 }
 @media (max-width: 565px) {
   .example-layouts_container {
@@ -543,15 +542,6 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 20px;
   grid-column-gap: 20px;
-  /*@media (max-width: $tablets) {
-    /*@include flex-grid(25px, 15px, 180px);
-  }*/
-  /*@media (max-width: $phones) {
-    @include flex-grid(25px, 15px, 160px);
-  }
-  @media (max-width: $phones-mini) {
-    /*@include /*flex-grid(15px, 10px, 130px);
-  }*/
 }
 @media (max-width: 565px) {
   .example-layouts_wraper {
@@ -559,8 +549,6 @@ body {
     grid-row-gap: 25px;
     grid-column-gap: 15px;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    /*grid-template-columns: repeat(2, 1fr);*/
-    /*@include flex-grid(25px, 15px, 160px);*/
   }
 }
 
@@ -621,9 +609,6 @@ body {
 .our-services_wraper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /*@media (max-width: $phones-big) {
-    grid-template-columns: repeat(1, 1fr);
-  }*/
 }
 @media (max-width: 767px) {
   .our-services_wraper {
