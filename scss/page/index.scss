@@ -126,6 +126,9 @@
     @media (max-width: $tablets) {
       margin: 0 30px 70px 30px;
     }
+    @media (max-width: $phones-mini) {
+      margin: 0 15px 70px 15px;
+    }
   }
   &_wraper {
     display: grid;
@@ -215,6 +218,9 @@
     }
     @media (max-width: $phones-big) {
       margin: 0 30px 70px 30px;
+    }
+    @media (max-width: $phones-mini) {
+      margin: 0 15px 70px 15px;
     }
   }
   &_wraper {
