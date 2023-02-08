@@ -438,7 +438,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 602px;
-  background: url("../public/img/title-image.jpg") center center/cover no-repeat;
+  background: url("./img/title-image.jpg") center center/cover no-repeat;
 }
 .mainImage_smallTitleText {
   font: 400 12px/22px "Old+Standard+TT";
@@ -571,7 +571,7 @@ body {
   justify-content: center;
   text-align: center;
   height: 461px;
-  background: url("../public/img/bottom-image.jpg") center center/cover no-repeat;
+  background: url("./img/bottom-image.jpg") center center/cover no-repeat;
 }
 
 .ourServices {
