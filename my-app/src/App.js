@@ -1,5 +1,16 @@
 import React, { Component } from "react";
 import classes from "./App.module.css";
+import { ReactComponent as Square } from "./assets/icons/square.svg";
+import { ReactComponent as Triangle } from "./assets/icons/triangle.svg";
+import { ReactComponent as Hemisphere } from "./assets/icons/hemisphere.svg";
+import { ReactComponent as Hemisphere2 } from "./assets/icons/hemisphere2.svg";
+import { ReactComponent as Circle } from "./assets/icons/circle.svg";
+import { ReactComponent as Ruby } from "./assets/icons/ruby.svg";
+import { ReactComponent as InstaImg } from "./assets/icons/insta-img.svg";
+import { ReactComponent as Facebook } from "./assets/icons/facebook.svg";
+import { ReactComponent as Twiter } from "./assets/icons/twiter.svg";
+import { ReactComponent as Instagram } from "./assets/icons/instagram.svg";
+import { ReactComponent as Link } from "./assets/icons/link.svg";
 
 class App extends Component {
   render() {
@@ -116,8 +127,8 @@ class Content extends Component {
       <div className={classes.exampleLayouts_container}>
         <div className={classes.exampleLayouts_wraper}>
           <div className={classes.layoutsItems}>
-            <a to={"#"}>
-              <img src={require("./img/landing-vr1.png")} alt="404" />
+            <a href={"#"}>
+              <img src={require("./assets/images/landing-vr1.png")} alt="404" />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               Landing vr.1
@@ -125,7 +136,7 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/landing-vr2.png")} alt="404" />
+              <img src={require("./assets/images/landing-vr2.png")} alt="404" />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               Landing vr.2
@@ -133,7 +144,7 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/landing-vr3.png")} alt="404" />
+              <img src={require("./assets/images/landing-vr3.png")} alt="404" />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               Landing vr.3
@@ -141,7 +152,7 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/portfolio1.png")} alt="404" />
+              <img src={require("./assets/images/portfolio1.png")} alt="404" />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               Portfolio 1
@@ -149,7 +160,7 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/portfolio2.png")} alt="404" />
+              <img src={require("./assets/images/portfolio2.png")} alt="404" />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               Portfolio 1
@@ -157,7 +168,7 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/portfolio3.png")} alt="404" />
+              <img src={require("./assets/images/portfolio3.png")} alt="404" />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               Portfolio 1
@@ -165,7 +176,7 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/portfolio4.png")} alt="404" />
+              <img src={require("./assets/images/portfolio4.png")} alt="404" />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               Portfolio 1
@@ -173,7 +184,10 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/single-project.png")} alt="404" />
+              <img
+                src={require("./assets/images/single-project.png")}
+                alt="404"
+              />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               Single Project
@@ -181,7 +195,10 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/about-company.png")} alt="404" />
+              <img
+                src={require("./assets/images/about-company.png")}
+                alt="404"
+              />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               About Company
@@ -189,7 +206,7 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/about-team.png")} alt="404" />
+              <img src={require("./assets/images/about-team.png")} alt="404" />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               About TEam
@@ -197,7 +214,10 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/single-team-member.png")} alt="404" />
+              <img
+                src={require("./assets/images/single-team-member.png")}
+                alt="404"
+              />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               Single Team Member
@@ -205,7 +225,7 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/faq-page.png")} alt="404" />
+              <img src={require("./assets/images/faq-page.png")} alt="404" />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               FAQ PAge
@@ -213,7 +233,7 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/contact-us.png")} alt="404" />
+              <img src={require("./assets/images/contact-us.png")} alt="404" />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               Contact Us
@@ -221,7 +241,7 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/blog1.png")} alt="404" />
+              <img src={require("./assets/images/blog1.png")} alt="404" />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               Blog 1
@@ -229,7 +249,7 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/blog2.png")} alt="404" />
+              <img src={require("./assets/images/blog2.png")} alt="404" />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               Blog 2
@@ -237,7 +257,7 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/blog3.png")} alt="404" />
+              <img src={require("./assets/images/blog3.png")} alt="404" />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               Blog 3
@@ -245,7 +265,10 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/blog-categories.png")} alt="404" />
+              <img
+                src={require("./assets/images/blog-categories.png")}
+                alt="404"
+              />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               Blog Categories
@@ -253,7 +276,7 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/single-blog.png")} alt="404" />
+              <img src={require("./assets/images/single-blog.png")} alt="404" />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               Single Blog
@@ -261,7 +284,7 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/pricing.png")} alt="404" />
+              <img src={require("./assets/images/pricing.png")} alt="404" />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               Pricing
@@ -269,7 +292,7 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/style-guide.png")} alt="404" />
+              <img src={require("./assets/images/style-guide.png")} alt="404" />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               Style guide
@@ -277,7 +300,7 @@ class Content extends Component {
           </div>
           <div className={classes.layoutsItems}>
             <a href="#">
-              <img src={require("./img/licenses.png")} alt="404" />
+              <img src={require("./assets/images/licenses.png")} alt="404" />
             </a>
             <a href="#" className={classes.layoutsItems_refImg}>
               Licenses
@@ -304,16 +327,13 @@ class OurServices extends Component {
         <div className={classes.ourServices_container}>
           <div className={classes.ourServices_wraper}>
             <div className={classes.ourServices_items}>
-              <img
-                className={classes.ourServices_vectorImg}
-                src={require("./img/square.svg")}
-                alt="404"
-              />
-              <img
-                className={classes.ourServices_vectorImg2}
-                src={require("./img/triangle.svg")}
-                alt="404"
-              />
+              <div className={classes.ourServices_vectorImg}>
+                <Square />
+              </div>
+              <div className={classes.ourServices_vectorImg2}>
+                <Triangle />
+              </div>
+
               <p className={classes.ourServices_yellowText}>Web Design</p>
               <p className={classes.ourServices_grayText}>
                 Suspendisse varius enim in
@@ -323,16 +343,13 @@ class OurServices extends Component {
               </p>
             </div>
             <div className={classes.ourServices_items}>
-              <img
-                className={classes.ourServices_vectorImg}
-                src={require("./img/hemisphere.svg")}
-                alt="404"
-              />
-              <img
-                className={classes.ourServices_vectorImg3}
-                src={require("./img/hemisphere2.svg")}
-                alt="404"
-              />
+              <div className={classes.ourServices_vectorImg}>
+                <Hemisphere />
+              </div>
+              <div className={classes.ourServices_vectorImg3}>
+                <Hemisphere2 />
+              </div>
+
               <p className={classes.ourServices_yellowText}>UI/UX Design</p>
               <p className={classes.ourServices_grayText}>
                 Suspendisse varius enim in
@@ -342,16 +359,12 @@ class OurServices extends Component {
               </p>
             </div>
             <div className={classes.ourServices_items}>
-              <img
-                className={classes.ourServices_vectorImg}
-                src={require("./img/circle.svg")}
-                alt="404"
-              />
-              <img
-                className={classes.ourServices_vectorImg2}
-                src={require("./img/ruby.svg")}
-                alt="404"
-              />
+              <div className={classes.ourServices_vectorImg}>
+                <Circle />
+              </div>
+              <div className={classes.ourServices_vectorImg4}>
+                <Ruby />
+              </div>
               <p className={classes.ourServices_yellowText}>SEO & Marketing</p>
               <p className={classes.ourServices_grayText}>
                 Suspendisse varius enim in
@@ -373,26 +386,22 @@ class FollowSocial extends Component {
       <div className={classes.followSocial_container}>
         <div className={classes.followSocial_wraper}>
           <div className={classes.followSocial_items}>
-            <img
-              className={classes.followSocial_items_vectorImg}
-              src={require("./img/insta-img.svg")}
-              alt="404"
-            />
+            <div className={classes.followSocial_items_vectorImg}>
+              <InstaImg />
+            </div>
             <img
               className={classes.followSocial_socImg}
-              src={require("./img/soc-img.jpg")}
+              src={require("./assets/images/soc-img.jpg")}
               alt="404"
             />
           </div>
           <div className={classes.followSocial_items}>
-            <img
-              className={classes.followSocial_items_vectorImg}
-              src={require("./img/insta-img.svg")}
-              alt="404"
-            />
+            <div className={classes.followSocial_items_vectorImg}>
+              <InstaImg />
+            </div>
             <img
               className={classes.followSocial_socImg}
-              src={require("./img/soc-img2.jpg")}
+              src={require("./assets/images/soc-img2.jpg")}
               alt="404"
             />
           </div>
@@ -403,26 +412,22 @@ class FollowSocial extends Component {
             </a>
           </div>
           <div className={classes.followSocial_items}>
-            <img
-              className={classes.followSocial_items_vectorImg}
-              src={require("./img/insta-img.svg")}
-              alt="404"
-            />
+            <div className={classes.followSocial_items_vectorImg}>
+              <InstaImg />
+            </div>
             <img
               className={classes.followSocial_socImg}
-              src={require("./img/soc-img3.jpg")}
+              src={require("./assets/images/soc-img3.jpg")}
               alt="404"
             />
           </div>
           <div className={classes.followSocial_items}>
-            <img
-              className={classes.followSocial_items_vectorImg}
-              src={require("./img/insta-img.svg")}
-              alt="404"
-            />
+            <div className={classes.followSocial_items_vectorImg}>
+              <InstaImg />
+            </div>
             <img
               className={classes.followSocial_socImg}
-              src={require("./img/soc-img4.jpg")}
+              src={require("./assets/images/soc-img4.jpg")}
               alt="404"
             />
           </div>
@@ -464,16 +469,16 @@ class SocRef extends Component {
     return (
       <div className={classes.socRef}>
         <a href="#">
-          <img src={require("./img/facebook.svg")} alt="" />
+          <Facebook className={classes.socSvg} />
         </a>
         <a href="#">
-          <img src={require("./img/tweeter.svg")} alt="" />
+          <Twiter className={classes.socSvg} />
         </a>
         <a href="#">
-          <img src={require("./img/instagram.svg")} alt="" />
+          <Instagram className={classes.socSvg} />
         </a>
         <a href="#">
-          <img src={require("./img/link.svg")} alt="" />
+          <Link className={classes.socSvg} />
         </a>
       </div>
     );
