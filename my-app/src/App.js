@@ -8,9 +8,39 @@ import { ReactComponent as Circle } from "./assets/icons/circle.svg";
 import { ReactComponent as Ruby } from "./assets/icons/ruby.svg";
 import { ReactComponent as InstaImg } from "./assets/icons/insta-img.svg";
 import { ReactComponent as Facebook } from "./assets/icons/facebook.svg";
-import { ReactComponent as Twiter } from "./assets/icons/twiter.svg";
+import { ReactComponent as Twitter } from "./assets/icons/twitter.svg";
 import { ReactComponent as Instagram } from "./assets/icons/instagram.svg";
 import { ReactComponent as Link } from "./assets/icons/link.svg";
+//* images
+import landing_vr1 from "./assets/images/landing_vr1.png";
+import about_company from "./assets/images/about_company.png";
+import about_team from "./assets/images/about_team.png";
+import blog1 from "./assets/images/blog1.png";
+import blog2 from "./assets/images/blog2.png";
+import blog3 from "./assets/images/blog3.png";
+import blog_categories from "./assets/images/blog_categories.png";
+import contact_us from "./assets/images/contact_us.png";
+import faq_page from "./assets/images/faq_page.png";
+import landing_vr2 from "./assets/images/landing_vr2.png";
+import landing_vr3 from "./assets/images/landing_vr3.png";
+import licenses from "./assets/images/licenses.png";
+import portfolio1 from "./assets/images/portfolio1.png";
+import portfolio2 from "./assets/images/portfolio2.png";
+import portfolio3 from "./assets/images/portfolio3.png";
+import portfolio4 from "./assets/images/portfolio4.png";
+import pricing from "./assets/images/pricing.png";
+import single_blog from "./assets/images/single_blog.png";
+import single_project from "./assets/images/single_project.png";
+import single_team_member from "./assets/images/single_team_member.png";
+import soc_img from "./assets/images/soc_img.jpg";
+import soc_img2 from "./assets/images/soc_img2.jpg";
+import soc_img4 from "./assets/images/soc_img4.jpg";
+import soc_img3 from "./assets/images/soc_img3.jpg";
+import style_guide from "./assets/images/style_guide.png";
+
+
+
+
 
 class App extends Component {
   render() {
@@ -37,7 +67,7 @@ class Header extends Component {
   render() {
     return (
       <body>
-        <div className={classes.wraper}>
+        <div className={classes.wrapper}>
           <header>
             <div>
               <nav className={classes.navBar}>
@@ -48,39 +78,39 @@ class Header extends Component {
                 </div>
                 <ul className={classes.navList}>
                   <li>
-                    <a className={classes.transparentHeadr_logo} href="404">
+                    <a className={classes.transparent_header_logo} href="404">
                       Atelier.
                     </a>
                   </li>
                   <li>
-                    <a className={classes.transparentHeadr_overview} href="404">
+                    <a className={classes.transparent_header_overview} href="404">
                       Overview
                     </a>
                   </li>
                   <li>
-                    <a className={classes.transparentHeadr_other} href="404">
+                    <a className={classes.transparent_header_other} href="404">
                       Pages
                     </a>
                   </li>
                   <li>
-                    <a className={classes.transparentHeadr_other} href="404">
+                    <a className={classes.transparent_header_other} href="404">
                       Portfolio
                     </a>
                   </li>
                   <li>
-                    <a className={classes.transparentHeadr_other} href="404">
+                    <a className={classes.transparent_header_other} href="404">
                       Template
                     </a>
                   </li>
                   <li>
-                    <a className={classes.transparentHeadr_other} href="404">
+                    <a className={classes.transparent_header_other} href="404">
                       Contact
                     </a>
                   </li>
                 </ul>
               </nav>
             </div>
-            <a className={classes.transparentHeadr_buyTemplate} href="404">
+            <a className={classes.transparent_header_buyTemplate} href="404">
               Buy Template
             </a>
           </header>
@@ -121,191 +151,57 @@ class ExampleLayouts extends Component {
   }
 }
 
+class Post extends Component {
+  constructor (props){
+    super(props);
+    this.state = {
+      imageRef: '/example_page/',
+    }
+  }
+  render() {
+    const {imageRef} = this.state;
+    return(
+      <div className={classes.layoutsItems}>
+        <a href={`${imageRef}${this.props.id}`}>
+          <img src={this.props.image} alt="404" />
+        </a>
+        <a
+          href={`${imageRef}${this.props.id}`}
+          className={classes.layoutsItems_refImg}
+        >
+          {this.props.massage}
+        </a>
+      </div>
+    );
+  }
+}
+
 class Content extends Component {
   render() {
     return (
       <div className={classes.exampleLayouts_container}>
-        <div className={classes.exampleLayouts_wraper}>
-          <div className={classes.layoutsItems}>
-            <a href={"#"}>
-              <img src={require("./assets/images/landing-vr1.png")} alt="404" />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              Landing vr.1
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img src={require("./assets/images/landing-vr2.png")} alt="404" />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              Landing vr.2
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img src={require("./assets/images/landing-vr3.png")} alt="404" />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              Landing vr.3
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img src={require("./assets/images/portfolio1.png")} alt="404" />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              Portfolio 1
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img src={require("./assets/images/portfolio2.png")} alt="404" />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              Portfolio 1
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img src={require("./assets/images/portfolio3.png")} alt="404" />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              Portfolio 1
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img src={require("./assets/images/portfolio4.png")} alt="404" />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              Portfolio 1
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img
-                src={require("./assets/images/single-project.png")}
-                alt="404"
-              />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              Single Project
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img
-                src={require("./assets/images/about-company.png")}
-                alt="404"
-              />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              About Company
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img src={require("./assets/images/about-team.png")} alt="404" />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              About TEam
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img
-                src={require("./assets/images/single-team-member.png")}
-                alt="404"
-              />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              Single Team Member
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img src={require("./assets/images/faq-page.png")} alt="404" />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              FAQ PAge
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img src={require("./assets/images/contact-us.png")} alt="404" />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              Contact Us
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img src={require("./assets/images/blog1.png")} alt="404" />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              Blog 1
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img src={require("./assets/images/blog2.png")} alt="404" />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              Blog 2
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img src={require("./assets/images/blog3.png")} alt="404" />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              Blog 3
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img
-                src={require("./assets/images/blog-categories.png")}
-                alt="404"
-              />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              Blog Categories
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img src={require("./assets/images/single-blog.png")} alt="404" />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              Single Blog
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img src={require("./assets/images/pricing.png")} alt="404" />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              Pricing
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img src={require("./assets/images/style-guide.png")} alt="404" />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              Style guide
-            </a>
-          </div>
-          <div className={classes.layoutsItems}>
-            <a href="#">
-              <img src={require("./assets/images/licenses.png")} alt="404" />
-            </a>
-            <a href="#" className={classes.layoutsItems_refImg}>
-              Licenses
-            </a>
-          </div>
+        <div className={classes.exampleLayouts_wrapper}>
+          <Post id = 'landing_vr1' massage = 'Landing vr.1' image = {landing_vr1} />
+          <Post id = 'landing_vr2' massage = 'Landing vr.2' image = {landing_vr2} />
+          <Post id = 'landing_vr3' massage = 'Landing vr.3' image = {landing_vr3} />
+          <Post id = 'portfolio1' massage = 'Portfolio 1' image = {portfolio1} />
+          <Post id = 'portfolio2' massage = 'Portfolio 1' image = {portfolio2} />
+          <Post id = 'portfolio3' massage = 'Portfolio 1' image = {portfolio3} />
+          <Post id = 'portfolio4' massage = 'Portfolio 1' image = {portfolio4} />
+          <Post id = 'single_project' massage = 'Single Project' image = {single_project} />
+          <Post id = 'about_company' massage = 'About Company' image = {about_company} />
+          <Post id = 'about_team' massage = 'About TEam' image = {about_team} />
+          <Post id = 'single_team_member' massage = 'Single Team Member' image = {single_team_member} />
+          <Post id = 'faq_page' massage = 'FAQ Page' image = {faq_page} />
+          <Post id = 'contact_us' massage = 'Contact Us' image = {contact_us} />
+          <Post id = 'blog1' massage = 'Blog 1' image = {blog1} />
+          <Post id = 'blog2' massage = 'Blog 2' image = {blog2} />
+          <Post id = 'blog3' massage = 'Blog 3' image = {blog3} />
+          <Post id = 'blog_categories' massage = 'Blog Categories' image = {blog_categories} />
+          <Post id = 'single_blog' massage = 'Single Blog' image = {single_blog} />
+          <Post id = 'pricing' massage = 'Pricing' image = {pricing} />
+          <Post id = 'style_guide' massage = 'Style guide' image = {style_guide} />
+          <Post id = 'licenses' massage = 'Licenses' image = {licenses} />
         </div>
       </div>
     );
@@ -319,13 +215,30 @@ class BottomBlock extends Component {
 }
 
 class OurServices extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      grayTextBig1: 'Suspendisse varius enim in',
+      grayTextSmall1: 'cursus id rutrum imperdiet. eros elementum tristique.',
+      grayTextBig2: 'Suspendisse varius enim in',
+      grayTextSmall2: 'cursus id rutrum imperdiet. eros elementum tristique.',
+      grayTextBig3: 'Suspendisse varius enim in',
+      grayTextSmall3: 'cursus id rutrum imperdiet. eros elementum tristique.'
+    }
+  }
   render() {
+    const {grayTextBig1,
+      grayTextSmall1,
+      grayTextBig2,
+      grayTextSmall2,
+      grayTextBig3,
+      grayTextSmall3} = this.state;
     return (
       <div className={classes.exampleLayouts}>
         <p className={classes.exampleLayouts_core}>Our Core Features</p>
         <p className={classes.bigYellowText}>Our Services</p>
         <div className={classes.ourServices_container}>
-          <div className={classes.ourServices_wraper}>
+          <div className={classes.ourServices_wrapper}>
             <div className={classes.ourServices_items}>
               <div className={classes.ourServices_vectorImg}>
                 <Square />
@@ -336,10 +249,10 @@ class OurServices extends Component {
 
               <p className={classes.ourServices_yellowText}>Web Design</p>
               <p className={classes.ourServices_grayText}>
-                Suspendisse varius enim in
+                {grayTextBig1}
               </p>
               <p className={classes.ourServices_graySmallText}>
-                cursus id rutrum imperdiet. eros elementum tristique.
+                {grayTextSmall1}
               </p>
             </div>
             <div className={classes.ourServices_items}>
@@ -352,10 +265,10 @@ class OurServices extends Component {
 
               <p className={classes.ourServices_yellowText}>UI/UX Design</p>
               <p className={classes.ourServices_grayText}>
-                Suspendisse varius enim in
+                {grayTextBig2}
               </p>
               <p className={classes.ourServices_graySmallText}>
-                cursus id rutrum imperdiet. eros elementum tristique.
+                {grayTextSmall2}
               </p>
             </div>
             <div className={classes.ourServices_items}>
@@ -367,10 +280,10 @@ class OurServices extends Component {
               </div>
               <p className={classes.ourServices_yellowText}>SEO & Marketing</p>
               <p className={classes.ourServices_grayText}>
-                Suspendisse varius enim in
+                {grayTextBig3}
               </p>
               <p className={classes.ourServices_graySmallText}>
-                cursus id rutrum imperdiet. eros elementum tristique.
+                {grayTextSmall3}
               </p>
             </div>
           </div>
@@ -384,14 +297,14 @@ class FollowSocial extends Component {
   render() {
     return (
       <div className={classes.followSocial_container}>
-        <div className={classes.followSocial_wraper}>
+        <div className={classes.followSocial_wrapper}>
           <div className={classes.followSocial_items}>
             <div className={classes.followSocial_items_vectorImg}>
               <InstaImg />
             </div>
             <img
               className={classes.followSocial_socImg}
-              src={require("./assets/images/soc-img.jpg")}
+              src={soc_img}
               alt="404"
             />
           </div>
@@ -401,7 +314,7 @@ class FollowSocial extends Component {
             </div>
             <img
               className={classes.followSocial_socImg}
-              src={require("./assets/images/soc-img2.jpg")}
+              src={soc_img2}
               alt="404"
             />
           </div>
@@ -417,7 +330,7 @@ class FollowSocial extends Component {
             </div>
             <img
               className={classes.followSocial_socImg}
-              src={require("./assets/images/soc-img3.jpg")}
+              src={soc_img3}
               alt="404"
             />
           </div>
@@ -427,7 +340,7 @@ class FollowSocial extends Component {
             </div>
             <img
               className={classes.followSocial_socImg}
-              src={require("./assets/images/soc-img4.jpg")}
+              src={soc_img4}
               alt="404"
             />
           </div>
@@ -472,7 +385,7 @@ class SocRef extends Component {
           <Facebook className={classes.socSvg} />
         </a>
         <a href="#">
-          <Twiter className={classes.socSvg} />
+          <Twitter className={classes.socSvg} />
         </a>
         <a href="#">
           <Instagram className={classes.socSvg} />
@@ -486,23 +399,33 @@ class SocRef extends Component {
 }
 
 class Footer extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      webflow: '#',
+      gitHubWey: 'https://github.com/Xitch89/ReactJS',
+      figma: 'https://www.figma.com/file/eukF6vHhGD51To79l661wN/Atelier.-%2B?node-id=1%3A2',
+      author: 'Andrii Oliinyk'
+    }
+  }
   render() {
+    const {webflow, gitHubWey, figma, author} = this.state;
     return (
       <div className={classes.footer}>
-        <div className={classes.footer_conteiner}>
+        <div className={classes.footer_container}>
           <div className={classes.footer_powered}>
             <p>Powered by</p>
-            <a href="#">Webflow</a>
+            <a href={webflow}>Webflow</a>
           </div>
           <div className={classes.footer_rightRef}>
-            <a href="https://github.com/Xitch89/ReactJS">GitHub</a>
+            <a href={gitHubWey}>GitHub</a>
             <a
               className={classes.footer_rightRefBorder}
-              href="https://www.figma.com/file/eukF6vHhGD51To79l661wN/Atelier.-%2B?node-id=1%3A2"
+              href={figma}
             >
               Figma
             </a>
-            <a href="#">author: Andrii Oliinyk</a>
+            <a href={author}>author: Andrii Oliinyk</a>
           </div>
         </div>
       </div>

@@ -89,7 +89,7 @@ h6 {
 /*color*/
 /*Font*/
 header {
-  position: sticky;
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -117,7 +117,7 @@ ul {
   max-width: 100%;
 }
 
-.transparentHeadr_logo {
+.transparent_header_logo {
   font: 400 22px/28px "Old+Standard+TT";
   margin-left: 120px;
   color: #ffae2b;
@@ -125,10 +125,10 @@ ul {
   -moz-transition: 0.2s;
   transition: 0.2s;
 }
-.transparentHeadr_logo:hover {
+.transparent_header_logo:hover {
   color: #00ffc8;
 }
-.transparentHeadr_overview {
+.transparent_header_overview {
   font: 400 11px/24px "Old+Standard+TT";
   margin-left: 42px;
   margin-right: 28px;
@@ -137,10 +137,10 @@ ul {
   -moz-transition: 0.2s;
   transition: 0.2s;
 }
-.transparentHeadr_overview:hover {
+.transparent_header_overview:hover {
   color: #00ffc8;
 }
-.transparentHeadr_other {
+.transparent_header_other {
   font: 400 11px/24px "Old+Standard+TT";
   margin-right: 40px;
   color: #aca592;
@@ -148,10 +148,10 @@ ul {
   -moz-transition: 0.2s;
   transition: 0.2s;
 }
-.transparentHeadr_other:hover {
+.transparent_header_other:hover {
   color: #00ffc8;
 }
-.transparentHeadr_buyTemplate {
+.transparent_header_buyTemplate {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -169,41 +169,41 @@ ul {
   -moz-transition: 0.2s;
   transition: 0.2s;
 }
-.transparentHeadr_buyTemplate:hover {
+.transparent_header_buyTemplate:hover {
   border: 2px solid #00ffc8;
   color: #00ffc8;
 }
 @media (max-width: 991px) {
-  .transparentHeadr_logo {
+  .transparent_header_logo {
     margin: 0;
   }
-  .transparentHeadr_overview {
+  .transparent_header_overview {
     margin: 0;
   }
-  .transparentHeadr_other {
+  .transparent_header_other {
     margin: 0;
   }
-  .transparentHeadr_buyTemplate {
+  .transparent_header_buyTemplate {
     position: relative;
     margin-right: 60px;
   }
 }
 @media (max-width: 565px) {
-  .transparentHeadr_buyTemplate {
+  .transparent_header_buyTemplate {
     margin-right: 30px;
     width: 100px;
     height: 35px;
   }
 }
 @media (max-width: 400px) {
-  .transparentHeadr_buyTemplate {
+  .transparent_header_buyTemplate {
     margin-right: 30px;
     width: 90px;
     height: 30px;
   }
 }
 @media (max-width: 320px) {
-  .transparentHeadr_buyTemplate {
+  .transparent_header_buyTemplate {
     margin-right: 15px;
   }
 }
@@ -360,7 +360,7 @@ ul {
 .footer a:hover {
   color: #00ffc8;
 }
-.footer_conteiner {
+.footer_container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -370,7 +370,7 @@ ul {
   color: #aca592;
   height: 80px;
 }
-.footer_conteiner p {
+.footer_container p {
   font: 400 14px/18px "Old+Standard+TT";
   color: #aca592;
 }
@@ -424,7 +424,7 @@ body {
   filter: drop-shadow(0px 8px 24px rgba(0, 0, 0, 0.6));
 }
 
-.wraper {
+.wrapper {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -438,7 +438,13 @@ body {
   align-items: center;
   justify-content: center;
   height: 602px;
+  margin-top: 80px;
   background: url("./assets/images/title-image.jpg") center center/cover no-repeat;
+}
+@media (max-width: 565px) {
+  .mainImage {
+    margin-top: 65px;
+  }
 }
 .mainImage_smallTitleText {
   font: 400 12px/22px "Old+Standard+TT";
@@ -532,14 +538,14 @@ body {
     margin: 40px 15px;
   }
 }
-.exampleLayouts_wraper {
+.exampleLayouts_wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-row-gap: 20px;
   grid-column-gap: 20px;
 }
 @media (max-width: 565px) {
-  .exampleLayouts_wraper {
+  .exampleLayouts_wrapper {
     display: grid;
     grid-row-gap: 25px;
     grid-column-gap: 15px;
@@ -606,12 +612,12 @@ body {
     margin: 0 15px 70px 15px;
   }
 }
-.ourServices_wraper {
+.ourServices_wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 @media (max-width: 767px) {
-  .ourServices_wraper {
+  .ourServices_wrapper {
     grid-template-columns: repeat(1, 1fr);
   }
 }
@@ -730,13 +736,13 @@ body {
     margin: 0 15px 70px 15px;
   }
 }
-.followSocial_wraper {
+.followSocial_wrapper {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   font: 400 15px/35px "Old+Standard+TT";
 }
 @media (max-width: 767px) {
-  .followSocial_wraper {
+  .followSocial_wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -937,8 +943,8 @@ body {
   }
 }
 .socSvg {
-  width: 45px;
-  height: 25px;
+  width: 70%;
+  height: 70%;
   transition: 0.2s;
 }
 .socSvg:hover * {
