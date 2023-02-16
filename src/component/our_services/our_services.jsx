@@ -28,9 +28,7 @@ class OurServices extends Component {
       grayTextBig3,
       grayTextSmall3} = this.state;
     return (
-      <div className={classes.exampleLayouts}>
-        <p className={classes.exampleLayouts_core}>Our Core Features</p>
-        <p className={classes.bigYellowText}>Our Services</p>
+      <div>
         <div className={classes.ourServices_container}>
           <div className={classes.ourServices_wrapper}>
             <div className={classes.ourServices_items}>

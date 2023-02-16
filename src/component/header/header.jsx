@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import classes from "./header.module.css"
 
 class Header extends Component {
@@ -17,9 +18,9 @@ class Header extends Component {
                 
                 <ul className={classes.navList}>
                   <li>
-                    <a className={classes.transparent_header_logo} href="404">
+                    <Link className={classes.transparent_header_logo} to="/">
                       Atelier.
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a className={classes.transparent_header_overview} href="404">

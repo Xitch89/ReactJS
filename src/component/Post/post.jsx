@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import classes from "./post.module.css";
 
 class Post extends Component {
@@ -17,15 +18,15 @@ class Post extends Component {
     const {image, massage} = this.props;
     return(
       <div className={classes.layoutsItems}>
-        <a href={`${imageRef}${this.props.id}`}>
+        <Link to={`${imageRef}${this.props.id}`}>
           <img src={image} alt="404" />
-        </a>
-        <a
-          href={`${imageRef}${this.props.id}`}
+        </Link>
+        <Link
+          to={`${imageRef}${this.props.id}`}
           className={classes.layoutsItems_refImg}
         >
           {massage}
-        </a>
+        </Link>
       </div>
     );
   }

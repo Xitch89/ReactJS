@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import RefButton from "../camon/refButton";
 import classes from "./main_image.module.css";
 
 class MainImage extends Component {
@@ -13,9 +14,7 @@ class MainImage extends Component {
           <br />
           Creative Agencies
         </h1>
-        <a className={classes.mainImage_linkLayout} href="404">
-          VIEW LAYOUTS
-        </a>
+        <RefButton classLink={classes.mainImage_linkLayout} linkText="VIEW LAYOUTS" />
       </div>
     );
   }
