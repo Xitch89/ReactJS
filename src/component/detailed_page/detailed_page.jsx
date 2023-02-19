@@ -1,8 +1,8 @@
 import React, { Component }  from "react";
 import classes from "./detail_page.module.css";
-import landing_vr1 from "../../assets/image_detail_page/landing_vr1.png";
-import landing_vr2 from "../../assets/image_detail_page/landing_vr2.png";
-import landing_vr3 from "../../assets/image_detail_page/landing_vr3.png";
+import landing_vr1 from "../../assets/image_detail_page/landing_vr1.jpg";
+import landing_vr2 from "../../assets/image_detail_page/landing_vr2.jpg";
+import landing_vr3 from "../../assets/image_detail_page/landing_vr3.jpg";
 
 
 
