@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component} from "react";
 import classes from "./App.module.css";
 import Home from "./component/home/home";
 import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from "react-router-dom";
@@ -9,6 +9,7 @@ import {
 } from "./component/detailed_page/detailed_page";
 import Layout from "./component/layout";
 import ErrorPage from "./component/error_page/error_page";
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
