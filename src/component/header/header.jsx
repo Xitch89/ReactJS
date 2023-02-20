@@ -23,36 +23,36 @@ class Header extends Component {
                     </Link>
                   </li>
                   <li>
-                    <a className={classes.transparent_header_overview} href="404">
+                    <Link className={classes.transparent_header_overview} to="404">
                       Overview
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a className={classes.transparent_header_other} href="404">
+                    <Link className={classes.transparent_header_other} to="404">
                       Pages
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a className={classes.transparent_header_other} href="404">
+                    <Link className={classes.transparent_header_other} to="404">
                       Portfolio
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a className={classes.transparent_header_other} href="404">
+                    <Link className={classes.transparent_header_other} to="404">
                       Template
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a className={classes.transparent_header_other} href="404">
+                    <Link className={classes.transparent_header_other} to="404">
                       Contact
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </nav>
             </div>
-            <a className={classes.transparent_header_buyTemplate} href="404">
+            <Link className={classes.transparent_header_buyTemplate} to="404">
               Buy Template
-            </a>
+            </Link>
           </header>
         </div>
       </body>

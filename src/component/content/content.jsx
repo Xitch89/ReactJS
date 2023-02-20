@@ -22,7 +22,7 @@ import single_blog from "../../assets/images/single_blog.png";
 import single_project from "../../assets/images/single_project.png";
 import single_team_member from "../../assets/images/single_team_member.png";
 import style_guide from "../../assets/images/style_guide.png";
-import Post from "../Post/post";
+import Post from "../camon/post/post";
 
 
 

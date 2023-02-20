@@ -2,13 +2,12 @@ import React, { Component} from "react";
 import classes from "./App.module.css";
 import Home from "./component/home/home";
 import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from "react-router-dom";
-import {
-  LandingVr1,
-  LandingVr2,
-  LandingVr3,
-} from "./component/detailed_page/detailed_page";
+
 import Layout from "./component/layout";
 import ErrorPage from "./component/error_page/error_page";
+import LandingVr1 from "./component/detailed_page/landingVr1";
+import LandingVr2 from "./component/detailed_page/landingVr2";
+import LandingVr3 from "./component/detailed_page/landingVr3";
 
 
 const router = createBrowserRouter(

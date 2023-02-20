@@ -8,21 +8,17 @@ class Post extends Component {
     this.state = {
       imageRef: '/example_page/',
     }
-    this.props = {
-      image: '',
-      massage: ''
-    }
   }
   render() {
     const {imageRef} = this.state;
-    const {image, massage} = this.props;
+    const {image, massage, id} = this.props;
     return(
       <div className={classes.layoutsItems}>
-        <Link to={`${imageRef}${this.props.id}`}>
+        <Link to={`${imageRef}${id}`}>
           <img src={image} alt="404" />
         </Link>
         <Link
-          to={`${imageRef}${this.props.id}`}
+          to={`${imageRef}${id}`}
           className={classes.layoutsItems_refImg}
         >
           {massage}
