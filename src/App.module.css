@@ -29,8 +29,7 @@ aside {
   display: block;
 }
 
-html,
-body {
+html{
   height: 100%;
   width: 100%;
   font-size: 100%;
@@ -39,7 +38,6 @@ body {
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  overflow-x: hidden;
 }
 
 input,
@@ -92,4 +90,5 @@ h6 {
 
 body {
   background: #181511;
+  overflow-x: hidden;
 }

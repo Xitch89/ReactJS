@@ -5,7 +5,6 @@ import classes from "./header.module.css"
 class Header extends Component {
   render() {
     return (
-      <body>
         <div className={classes.wrapper}>
           <header>
             <div>
@@ -55,7 +54,6 @@ class Header extends Component {
             </Link>
           </header>
         </div>
-      </body>
     );
   }
 }
