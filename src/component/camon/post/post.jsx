@@ -6,7 +6,7 @@ class Post extends Component {
   constructor (props){
     super(props);
     this.state = {
-      imageRef: '/example_page/',
+      imageRef: '/example_page/'
     }
   }
   render() {

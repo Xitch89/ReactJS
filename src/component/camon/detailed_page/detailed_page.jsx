@@ -3,15 +3,6 @@ import classes from "./detail_page.module.css";
 
 
 class DetailedPage extends Component {
-    constructor(props){
-        super(props);
-        this.props = {
-            weyImage: '',
-            mainText: '',
-            smallText: '',
-            sumText: ''
-        }
-    }
     render() {
         const {weyImage, mainText, sumText} = this.props
         return(

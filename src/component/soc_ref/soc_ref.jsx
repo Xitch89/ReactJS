@@ -4,24 +4,25 @@ import classes from "./soc_ref.module.css";
 import { ReactComponent as Facebook } from "../../assets/icons/facebook.svg";
 import { ReactComponent as Twitter } from "../../assets/icons/twitter.svg";
 import { ReactComponent as Instagram } from "../../assets/icons/instagram.svg";
-import { ReactComponent as Link } from "../../assets/icons/link.svg";
+import { ReactComponent as Linked } from "../../assets/icons/linked.svg";
+import { Link } from "react-router-dom";
 
 class SocRef extends Component {
   render() {
     return (
       <div className={classes.socRef}>
-        <a href="#">
+        <Link to="404">
           <Facebook className={classes.socSvg} />
-        </a>
-        <a href="#">
+        </Link>
+        <Link to="404">
           <Twitter className={classes.socSvg} />
-        </a>
-        <a href="#">
+        </Link>
+        <Link to="404">
           <Instagram className={classes.socSvg} />
-        </a>
-        <a href="#">
-          <Link className={classes.socSvg} />
-        </a>
+        </Link>
+        <Link to="404">
+          <Linked className={classes.socSvg} />
+        </Link>
       </div>
     );
   }
