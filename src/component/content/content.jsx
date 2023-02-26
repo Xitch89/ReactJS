@@ -92,9 +92,18 @@ class Content extends Component {
 
     let handleCheckboxAlphabetChange = (event) => {
       if (event.target.checked) {
-        this.setState({ isAlphabetChecked: true, numberSortPostData: sortByIdAlphabet(numberSortPostData) });
-      } else {
-        this.setState({ isAlphabetChecked: false, numberSortPostData: copyPostData });
+        this.setState({
+          isChecked: "isAlphabetChecked",
+          isAlphabetChecked: true,
+          isDateChecked: false,
+          numberSortPostData: sortByIdAlphabet (numberSortPostData)
+        });
+      }else{
+        this.setState({
+          isChecked: null,
+          isAlphabetChecked: false,
+          numberSortPostData: copyPostData
+        });
       }
     };
 
@@ -104,9 +113,18 @@ class Content extends Component {
 
     let handleCheckboxDateChange = (event) => {
       if (event.target.checked) {
-        this.setState({ isDateChecked: true, numberSortPostData: sortByIdDate(numberSortPostData) });
-      } else {
-        this.setState({ isDateChecked: false, numberSortPostData: copyPostData });
+        this.setState({
+          isChecked: "isDateChecked",
+          isDateChecked: true,
+          isAlphabetChecked: false,
+          numberSortPostData: sortByIdDate(numberSortPostData)
+        });
+      }else{
+        this.setState({
+          isChecked: null,
+          isDateChecked: false,
+          numberSortPostData: copyPostData
+        });
       }
     };
 
