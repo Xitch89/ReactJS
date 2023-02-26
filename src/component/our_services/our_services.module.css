@@ -65,13 +65,13 @@
 }
 .ourServices_vectorImg4 {
   position: relative;
-  z-index: -1;
+  z-index: 1;
   left: 59px;
   top: -21px;
 }
 .ourServices_vectorImg3 {
   position: relative;
-  z-index: -1;
+  z-index: 1;
   left: 83px;
   top: -40px;
 }
