@@ -34,6 +34,7 @@ class Content extends Component {
     this.state = {
       isDateChecked: false,
       isAlphabetChecked: false,
+      isLessChecked: false,
       postData: [
       {id: 'landing_vr1', massage: 'Landing vr.1', image: landing_vr1, date: '10.03.2023', postNumber: 1 },
       {id: 'landing_vr2', massage: 'Landing vr.2', image: landing_vr2, date: '11.03.2023', postNumber: 2 },
@@ -83,7 +84,7 @@ class Content extends Component {
   
   
   render() {
-    const { isDateChecked, isAlphabetChecked, numberSortPostData, copyPostData} = this.state;
+    const { isDateChecked, isAlphabetChecked, isLessChecked, numberSortPostData, copyPostData} = this.state;
 
     const sortByIdAlphabet = (post) => {
       return post.slice().sort((a, b) => a.id.localeCompare(b.id));
@@ -96,12 +97,14 @@ class Content extends Component {
           isChecked: "isAlphabetChecked",
           isAlphabetChecked: true,
           isDateChecked: false,
+          isLessChecked: false,
           numberSortPostData: sortByIdAlphabet (numberSortPostData)
         });
       }else{
         this.setState({
           isChecked: null,
           isAlphabetChecked: false,
+          isLessChecked: false,
           numberSortPostData: copyPostData
         });
       }
@@ -117,11 +120,38 @@ class Content extends Component {
           isChecked: "isDateChecked",
           isDateChecked: true,
           isAlphabetChecked: false,
+          isLessChecked: false,
           numberSortPostData: sortByIdDate(numberSortPostData)
         });
       }else{
         this.setState({
           isChecked: null,
+          isDateChecked: false,
+          isLessChecked: false,
+          numberSortPostData: copyPostData
+        });
+      }
+    };
+
+    const sortByLessThan10 = (post) => {
+      const sortedPostData = post.slice().sort((a, b) => b.postNumber - a.postNumber);
+      return sortedPostData.slice(0, 10);
+    };
+
+    let handleCheckboxLessThan10 = (event) => {
+      if (event.target.checked) {
+        this.setState({
+          isChecked: "isLessChecked",
+          isLessChecked: true,
+          isDateChecked: false,
+          isAlphabetChecked: false,
+          numberSortPostData: sortByLessThan10(numberSortPostData)
+        });
+      }else{
+        this.setState({
+          isChecked: null,
+          isLessChecked: false,
+          isAlphabetChecked: false,
           isDateChecked: false,
           numberSortPostData: copyPostData
         });
@@ -143,6 +173,11 @@ class Content extends Component {
         <label className={classes.checkBoxContainer}>
           <input type="checkbox" checked={isDateChecked} onChange={handleCheckboxDateChange} />
           Filter by post date
+          <span className={classes.checkmark}></span>
+        </label> 
+        <label className={classes.checkBoxContainer}>
+          <input type="checkbox" checked={isLessChecked} onChange={handleCheckboxLessThan10} />
+          Show last ten
           <span className={classes.checkmark}></span>
         </label>
         </div>
