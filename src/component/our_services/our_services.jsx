@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import classes from "./our_services.module.css";
+import React, { Component } from 'react';
+import classes from './our_services.module.css';
 // svg
-import { ReactComponent as Square } from "../../assets/icons/square.svg";
-import { ReactComponent as Triangle } from "../../assets/icons/triangle.svg";
-import { ReactComponent as Hemisphere } from "../../assets/icons/hemisphere.svg";
-import { ReactComponent as Hemisphere2 } from "../../assets/icons/hemisphere2.svg";
-import { ReactComponent as Circle } from "../../assets/icons/circle.svg";
-import { ReactComponent as Ruby } from "../../assets/icons/ruby.svg";
+import { ReactComponent as Square } from '../../assets/icons/square.svg';
+import { ReactComponent as Triangle } from '../../assets/icons/triangle.svg';
+import { ReactComponent as Hemisphere } from '../../assets/icons/hemisphere.svg';
+import { ReactComponent as Hemisphere2 } from '../../assets/icons/hemisphere2.svg';
+import { ReactComponent as Circle } from '../../assets/icons/circle.svg';
+import { ReactComponent as Ruby } from '../../assets/icons/ruby.svg';
 
 class OurServices extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       grayTextBig1: 'Suspendisse varius enim in',
@@ -18,15 +18,18 @@ class OurServices extends Component {
       grayTextSmall2: 'cursus id rutrum imperdiet. eros elementum tristique.',
       grayTextBig3: 'Suspendisse varius enim in',
       grayTextSmall3: 'cursus id rutrum imperdiet. eros elementum tristique.'
-    }
+    };
   }
+
   render() {
-    const {grayTextBig1,
+    const { 
+      grayTextBig1,
       grayTextSmall1,
       grayTextBig2,
       grayTextSmall2,
       grayTextBig3,
-      grayTextSmall3} = this.state;
+      grayTextSmall3 
+    } = this.state;
     return (
       <div>
         <div className={classes.ourServices_container}>

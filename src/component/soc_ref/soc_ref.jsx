@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import classes from "./soc_ref.module.css";
-//svg
-import { ReactComponent as Facebook } from "../../assets/icons/facebook.svg";
-import { ReactComponent as Twitter } from "../../assets/icons/twitter.svg";
-import { ReactComponent as Instagram } from "../../assets/icons/instagram.svg";
-import { ReactComponent as Linked } from "../../assets/icons/linked.svg";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import classes from './soc_ref.module.css';
+// svg
+import { ReactComponent as Facebook } from '../../assets/icons/facebook.svg';
+import { ReactComponent as Twitter } from '../../assets/icons/twitter.svg';
+import { ReactComponent as Instagram } from '../../assets/icons/instagram.svg';
+import { ReactComponent as Linked } from '../../assets/icons/linked.svg';
 
 class SocRef extends Component {
   render() {
