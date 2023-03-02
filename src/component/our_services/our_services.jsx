@@ -13,7 +13,7 @@ class OurServices extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      uorServicesDate: [
+      ourServicesDate: [
         { 
           upperSvg: <Square style={{ margin: '60px 0 0 61px' }} />,
           lowerSvg: <Triangle style={{ 
@@ -47,10 +47,10 @@ class OurServices extends Component {
 
   render() {
     const { 
-      uorServicesDate
+      ourServicesDate
     } = this.state;
 
-    const newUorServices = uorServicesDate.map((services) => (
+    const newOurServices = ourServicesDate.map((services) => (
       <PostOurServices
         upperSvg={services.upperSvg}
         lowerSvg={services.lowerSvg}
@@ -59,11 +59,9 @@ class OurServices extends Component {
       />
     ));
     return (
-      <div>
-        <div className={classes.ourServices_container}>
-          <div className={classes.ourServices_wrapper}>
-            {newUorServices}
-          </div>
+      <div className={classes.ourServices_container}>
+        <div className={classes.ourServices_wrapper}>
+          {newOurServices}
         </div>
       </div>
     );
