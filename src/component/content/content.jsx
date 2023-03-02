@@ -37,6 +37,9 @@ class Content extends Component {
           id: 'landing_vr2', massage: 'Landing vr.2', image: LandingVr2, date: '11.03.2023', postNumber: 2 
         },
         {
+          id: 'landing_vr1', massage: 'Landing vr.1', image: LandingVr1, date: '10.03.2023', postNumber: 1 
+        },
+        {
           id: 'landing_vr3', massage: 'Landing vr.3', image: LandingVr3, date: '12.03.2023', postNumber: 3 
         },
         {
@@ -47,9 +50,6 @@ class Content extends Component {
         },
         {
           id: 'portfolio3', massage: 'Portfolio 1', image: Portfolio3, date: '24.03.2023', postNumber: 6 
-        },
-        {
-          id: 'landing_vr1', massage: 'Landing vr.1', image: LandingVr1, date: '10.03.2023', postNumber: 1 
         },
         {
           id: 'portfolio4', massage: 'Portfolio 1', image: Portfolio4, date: '22.03.2023', postNumber: 7 
@@ -203,7 +203,13 @@ class Content extends Component {
     };
 
     const newPost = numberSortPostData.map((post) => (
-      <Post key={post.id} id={post.id} massage={post.massage} image={post.image} date={post.date} />
+      <Post
+        key={post.id}
+        id={post.id} 
+        massage={post.massage} 
+        image={post.image} 
+        date={post.date}
+      />
     ));
 
     return (
