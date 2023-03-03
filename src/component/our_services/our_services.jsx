@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PostOurServices from '../camon/post_our_services/post_our_services';
+import PostOurServices from './our_servicesView';
 import classes from './our_services.module.css';
 // svg
 import { ReactComponent as Square } from '../../assets/icons/square.svg';
