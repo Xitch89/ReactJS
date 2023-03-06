@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import classes from './subscribe_block.module.css';
+import classes from './subscribeBlock.module.css';
 
 class SubscribeBlock extends Component {
   render() {

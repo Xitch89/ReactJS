@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import classes from './bottom_block.module.css';
+import classes from './bottomBlock.module.css';
 
 class BottomBlock extends Component {
   render() {

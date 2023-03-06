@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import PostOurServices from './our_servicesView';
-import classes from './our_services.module.css';
+import PostOurServices from '../ourServicesPost/ourServicesPost';
+import classes from './ourServices.module.css';
 // svg
 import { ReactComponent as Square } from '../../assets/icons/square.svg';
 import { ReactComponent as Triangle } from '../../assets/icons/triangle.svg';

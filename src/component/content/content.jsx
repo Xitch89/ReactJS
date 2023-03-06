@@ -23,7 +23,7 @@ import SingleBlog from '../../assets/images/single_blog.png';
 import SingleProject from '../../assets/images/single_project.png';
 import SingleTeamMember from '../../assets/images/single_team_member.png';
 import StyleGuide from '../../assets/images/style_guide.png';
-import Post from './contentView';
+import Post from '../contentPost/contentPost';
 
 class Content extends Component {
   constructor(props) {

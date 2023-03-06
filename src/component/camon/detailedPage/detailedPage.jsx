@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classes from './detail_page.module.css';
+import classes from './detailPage.module.css';
 
 class DetailedPage extends React.Component {
   render() {

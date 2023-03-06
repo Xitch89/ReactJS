@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Content from '../content/content';
-import ExampleLayouts from '../camon/example_layouts/example_layouts';
-import FollowSocial from '../follow_social/follow_social';
-import MainImage from '../main_image/main_image';
-import OurServices from '../our_services/our_services';
-import SocRef from '../soc_ref/soc_ref';
-import SubscribeBlock from '../subscribe_block/subscribe_block';
-import BottomBlock from '../bottom_block/bottom_block';
+import ExampleLayouts from '../camon/exampleLayouts/exampleLayouts';
+import FollowSocial from '../followSocial/followSocial';
+import MainImage from '../mainImage/mainImage';
+import OurServices from '../ourServices/ourServices';
+import SocRef from '../socRef/socRef';
+import SubscribeBlock from '../subscribeBlock/subscribeBlock';
+import BottomBlock from '../bottomBlock/bottomBlock';
 
 class Home extends Component {
   render() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import classes from './follow_social.module.css';
+import classes from './followSocial.module.css';
 // images
 import SocImg from '../../assets/images/soc_img.jpg';
 import SocImg2 from '../../assets/images/soc_img2.jpg';

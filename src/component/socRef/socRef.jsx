@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import classes from './soc_ref.module.css';
+import classes from './socRef.module.css';
 // svg
 import { ReactComponent as Facebook } from '../../assets/icons/facebook.svg';
 import { ReactComponent as Twitter } from '../../assets/icons/twitter.svg';

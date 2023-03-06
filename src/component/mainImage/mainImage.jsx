@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import RefButton from '../camon/refButton';
-import classes from './main_image.module.css';
+import classes from './mainImage.module.css';
 
 class MainImage extends Component {
   render() {

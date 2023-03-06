@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LandingVr3 from '../../assets/image_detail_page/landing_vr2.jpg';
-import DetailedPage from '../camon/detailed_page/detailed_page';
+import DetailedPage from '../camon/detailedPage/detailedPage';
 
 class Landing3 extends Component {
   render() {

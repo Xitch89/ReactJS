@@ -4,10 +4,10 @@ import {
 } from 'react-router-dom';
 import Home from './component/home/home';
 import Layout from './component/layout';
-import ErrorPage from './component/error_page/error_page';
-import Landing1 from './component/detailed_page/landingVr1';
-import Landing2 from './component/detailed_page/landingVr2';
-import Landing3 from './component/detailed_page/landingVr3';
+import ErrorPage from './component/errorPage/errorPage';
+import Landing1 from './component/detailedPage/landingVr1';
+import Landing2 from './component/detailedPage/landingVr2';
+import Landing3 from './component/detailedPage/landingVr3';
 
 const router = createHashRouter(
   createRoutesFromElements(
