@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { 
   createHashRouter, createRoutesFromElements, Route, RouterProvider 
 } from 'react-router-dom';
-import Home from './component/home/home';
-import Layout from './component/layout';
-import ErrorPage from './component/errorPage/errorPage';
-import Landing1 from './component/detailedPage/landingVr1';
-import Landing2 from './component/detailedPage/landingVr2';
-import Landing3 from './component/detailedPage/landingVr3';
+import Home from './component/Home/Home';
+import Layout from './component/Layout';
+import ErrorPage from './component/ErrorPage/ErrorPage';
+import Landing1 from './component/DetailedPage/LandingVr1';
+import Landing2 from './component/DetailedPage/LandingVr2';
+import Landing3 from './component/DetailedPage/LandingVr3';
 
 const router = createHashRouter(
   createRoutesFromElements(
