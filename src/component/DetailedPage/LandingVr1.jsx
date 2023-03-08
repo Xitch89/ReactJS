@@ -5,9 +5,7 @@ import DetailedPage from '../camon/DetailedPage/DetailedPage';
 class Landing1 extends Component {
   render() {
     return (
-      <div>
-        <DetailedPage weyImage={LandingVr1} mainText="Landing vr.1" sumText="Lorem ipsum dolor sit amet" />
-      </div>
+      <DetailedPage weyImage={LandingVr1} mainText="Landing vr.1" sumText="Lorem ipsum dolor sit amet" />
     );
   }
 }
