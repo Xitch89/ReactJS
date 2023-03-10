@@ -7,28 +7,28 @@ class Post extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      imageRef: '/example_page/'
+      imageRef: '/example-page/'
     };
   }
 
   render() {
     const { imageRef } = this.state;
     const { 
-      image, massage, id, date 
+      image, massage, date, postRef 
     } = this.props;
     return (
-      <div className={classes.layoutsItems}>
-        <Link to={`${imageRef}${id}`}>
+      <>
+        <Link to={`${imageRef}${postRef}`}>
           <img src={image} alt="404" />
         </Link>
         <Link
-          to={`${imageRef}${id}`}
+          to={`${imageRef}${postRef}`}
           className={classes.layoutsItems_refImg}
         >
           {massage}
         </Link>
         <p className={classes.date}>{date}</p>
-      </div>
+      </>
     );
   }
 }
@@ -36,7 +36,7 @@ class Post extends React.Component {
 Post.propTypes = {
   image: PropTypes.string.isRequired,
   massage: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  postRef: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
 };
 

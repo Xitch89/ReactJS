@@ -22,67 +22,67 @@ import StyleGuide from '../assets/images/style_guide.png';
 
 const postData = [
   {
-    id: 'landing_vr2', massage: 'Landing vr.2', image: LandingVr2, date: '11.03.2023', postNumber: 2 
+    postRef: 'landing-vr2', massage: 'Landing vr.2', image: LandingVr2, date: '11.03.2023', id: 2 
   },
   {
-    id: 'landing_vr1', massage: 'Landing vr.1', image: LandingVr1, date: '10.03.2023', postNumber: 1 
+    postRef: 'landing-vr1', massage: 'Landing vr.1', image: LandingVr1, date: '10.03.2023', id: 1 
   },
   {
-    id: 'landing_vr3', massage: 'Landing vr.3', image: LandingVr3, date: '12.03.2023', postNumber: 3 
+    postRef: 'landing-vr3', massage: 'Landing vr.3', image: LandingVr3, date: '12.03.2023', id: 3 
   },
   {
-    id: 'portfolio1', massage: 'Portfolio 1', image: Portfolio1, date: '08.02.2022', postNumber: 4 
+    postRef: 'portfolio1', massage: 'Portfolio 1', image: Portfolio1, date: '08.02.2022', id: 4 
   },
   {
-    id: 'portfolio2', massage: 'Portfolio 1', image: Portfolio2, date: '27.11.2023', postNumber: 5 
+    postRef: 'portfolio2', massage: 'Portfolio 1', image: Portfolio2, date: '27.11.2023', id: 5 
   },
   {
-    id: 'portfolio3', massage: 'Portfolio 1', image: Portfolio3, date: '24.03.2023', postNumber: 6 
+    postRef: 'portfolio3', massage: 'Portfolio 1', image: Portfolio3, date: '24.03.2023', id: 6 
   },
   {
-    id: 'portfolio4', massage: 'Portfolio 1', image: Portfolio4, date: '22.03.2023', postNumber: 7 
+    postRef: 'portfolio4', massage: 'Portfolio 1', image: Portfolio4, date: '22.03.2023', id: 7 
   },
   {
-    id: 'single', massage: 'Single Project', image: SingleProject, date: '22.03.2023', postNumber: 8 
+    postRef: 'single', massage: 'Single Project', image: SingleProject, date: '22.03.2023', id: 8 
   },
   {
-    id: 'about_company', massage: 'About Company', image: AboutCompany, date: '22.03.2023', postNumber: 9 
+    postRef: 'about_company', massage: 'About Company', image: AboutCompany, date: '22.03.2023', id: 9 
   },
   {
-    id: 'about_team', massage: 'About TEam', image: AboutTeam, date: '22.03.2023', postNumber: 10 
+    postRef: 'about_team', massage: 'About TEam', image: AboutTeam, date: '22.03.2023', id: 10 
   },
   {
-    id: 'single_team', massage: 'Single Team Member', image: SingleTeamMember, date: '22.03.2023', postNumber: 11 
+    postRef: 'single_team', massage: 'Single Team Member', image: SingleTeamMember, date: '22.03.2023', id: 11 
   },
   {
-    id: 'faq_page', massage: 'FAQ Page', image: FaqPage, date: '22.03.2023', postNumber: 12 
+    postRef: 'faq_page', massage: 'FAQ Page', image: FaqPage, date: '22.03.2023', id: 12 
   },
   {
-    id: 'contact_us', massage: 'Contact Us', image: ContactUs, date: '22.03.2023', postNumber: 13 
+    postRef: 'contact_us', massage: 'Contact Us', image: ContactUs, date: '22.03.2023', id: 13 
   },
   {
-    id: 'blog1', massage: 'Blog 1', image: Blog1, date: '22.03.2023', postNumber: 14 
+    postRef: 'blog1', massage: 'Blog 1', image: Blog1, date: '22.03.2023', id: 14 
   },
   {
-    id: 'blog2', massage: 'Blog 2', image: Blog2, date: '22.03.2023', postNumber: 15 
+    postRef: 'blog2', massage: 'Blog 2', image: Blog2, date: '22.03.2023', id: 15 
   },
   {
-    id: 'blog3', massage: 'Blog 3', image: Blog3, date: '22.03.2023', postNumber: 16 
+    postRef: 'blog3', massage: 'Blog 3', image: Blog3, date: '22.03.2023', id: 16 
   },
   {
-    id: 'blog_categories', massage: 'Blog Categories', image: BlogCategories, date: '22.03.2023', postNumber: 17 
+    postRef: 'blog_categories', massage: 'Blog Categories', image: BlogCategories, date: '22.03.2023', id: 17 
   },
   {
-    id: 'single_blog', massage: 'Single Blog', image: SingleBlog, date: '22.03.2023', postNumber: 18 
+    postRef: 'single_blog', massage: 'Single Blog', image: SingleBlog, date: '22.03.2023', id: 18 
   },
   {
-    id: 'pricing', massage: 'Pricing', image: Pricing, date: '22.03.2023', postNumber: 19 
+    postRef: 'pricing', massage: 'Pricing', image: Pricing, date: '22.03.2023', id: 19 
   },
   {
-    id: 'style_guide', massage: 'Style guide', image: StyleGuide, date: '22.03.2023', postNumber: 20 
+    postRef: 'style_guide', massage: 'Style guide', image: StyleGuide, date: '22.03.2023', id: 20 
   },
   {
-    id: 'licenses', massage: 'Licenses', image: Licenses, date: '22.03.2023', postNumber: 21 
+    postRef: 'licenses', massage: 'Licenses', image: Licenses, date: '22.03.2023', id: 21 
   }
 ];
 

@@ -13,9 +13,9 @@ const router = createHashRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route index element={<Home />} />
-      <Route path="example_page/landing_vr1" element={<Landing1 />} />
-      <Route path="example_page/landing_vr2" element={<Landing2 />} />
-      <Route path="example_page/landing_vr3" element={<Landing3 />} />
+      <Route path="example-page/landing-vr1" element={<Landing1 />} />
+      <Route path="example-page/landing-vr2" element={<Landing2 />} />
+      <Route path="example-page/landing-vr3" element={<Landing3 />} />
       <Route path="*" element={<ErrorPage />} />
     </Route>
   )

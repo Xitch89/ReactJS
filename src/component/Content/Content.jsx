@@ -30,7 +30,7 @@ class Content extends React.Component {
     for (let i = 0; i < copyPostData.length; i += 1) {
       const key = copyPostData[i];
       let j = i - 1;
-      while (j >= 0 && copyPostData[j].postNumber > key.postNumber) {
+      while (j >= 0 && copyPostData[j].id > key.id) {
         copyPostData[j + 1] = copyPostData[j];
         j -= 1;
       }
@@ -40,7 +40,7 @@ class Content extends React.Component {
   };
 
   sortByIdAlphabet = (post) => {
-    return post.slice().sort((a, b) => a.id.localeCompare(b.id));
+    return post.slice().sort((a, b) => a.postRef.localeCompare(b.postRef));
   };
 
   handleCheckboxAlphabetChange = (event) => {
@@ -58,7 +58,7 @@ class Content extends React.Component {
         isAlphabetChecked: false,
         isDateChecked: false,
         isLessChecked: false,
-        numberSortPostData: copyPostData
+        numberSortPostData: this.sortByPostNumber(copyPostData)
       });
     }
   };
@@ -82,14 +82,14 @@ class Content extends React.Component {
         isDateChecked: false,
         isAlphabetChecked: false,
         isLessChecked: false,
-        numberSortPostData: copyPostData
+        numberSortPostData: this.sortByPostNumber(copyPostData)
       });
     }
   };
 
   sortByLessThan10 = (post) => {
-    const sortedPostData = post.slice().sort((a, b) => b.postNumber - a.postNumber);
-    return sortedPostData.slice(0, 10);
+    const sortedPostData = post.slice().sort((a, b) => b.id - a.id);
+    return sortedPostData.slice(0, -10);
   };
 
   handleCheckboxLessThan10 = (event) => {
@@ -107,7 +107,7 @@ class Content extends React.Component {
         isLessChecked: false,
         isDateChecked: false,
         isAlphabetChecked: false,
-        numberSortPostData: copyPostData
+        numberSortPostData: this.sortByPostNumber(copyPostData)
       });
     }
   };
@@ -121,13 +121,15 @@ class Content extends React.Component {
     } = this.state;
 
     const newPost = numberSortPostData.map((post) => (
-      <Post
-        key={post.id}
-        id={post.id} 
-        massage={post.massage} 
-        image={post.image} 
-        date={post.date}
-      />
+      <div className={classes.layoutsItems}>
+        <Post
+          id={post.id}
+          postRef={post.postRef} 
+          massage={post.massage} 
+          image={post.image} 
+          date={post.date}
+        />
+      </div>
     ));
 
     return (
