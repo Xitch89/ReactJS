@@ -11,13 +11,14 @@ class Content extends React.Component {
       isAlphabetChecked: false,
       isLessChecked: false,
       copyPostData: [],
-      numberSortPostData: []
+      numberSortPostData: [],
     };
     const copyPostData = postData.slice();
     const numberSortPostData = this.sortByPostNumber(copyPostData);
     this.state.copyPostData = copyPostData;
     this.state.numberSortPostData = numberSortPostData;
   }
+  // default sort
 
   componentDidMount() {
     const { copyPostData } = this.state;
@@ -38,6 +39,8 @@ class Content extends React.Component {
     }
     return copyPostData;
   };
+
+  // filters
 
   sortByIdAlphabet = (post) => {
     return post.slice().sort((a, b) => a.postRef.localeCompare(b.postRef));
@@ -111,7 +114,50 @@ class Content extends React.Component {
       });
     }
   };
-  
+  // drag and drop
+
+  sortPost = (a, b) => {
+    if (a.order > b.order) {
+      return 1;
+    }
+    return -1;
+  };
+
+  dragStartHandler(e, card) {
+    this.setState({ currentCurd: card });
+  }
+
+  // dragEndHandler(e) {
+  // }
+
+  dragOverHandler(e) {
+    e.preventDefault();
+  }
+
+  dropHandler(e, card) {
+    const { currentCurd, copyPostData } = this.state;
+    const newCopyPostData = [...copyPostData];
+    e.preventDefault();
+    const updatedCopyPostData = newCopyPostData.map((c) => {
+      if (c.id === card.id) {
+        return { ...c, order: currentCurd.order };
+      }
+      if (c.id === currentCurd.id) {
+        return { ...c, order: card.order };
+      }
+      return c;
+    });
+    const updatedNumberSortPostData = updatedCopyPostData.sort(this.sortPost);
+    this.setState({
+      isLessChecked: false,
+      isDateChecked: false,
+      isAlphabetChecked: false,
+      currentCurd: null,
+      copyPostData: updatedCopyPostData,
+      numberSortPostData: updatedNumberSortPostData
+    });
+  }
+
   render() {
     const {
       isAlphabetChecked,
@@ -121,7 +167,15 @@ class Content extends React.Component {
     } = this.state;
 
     const newPost = numberSortPostData.map((post) => (
-      <div className={classes.layoutsItems}>
+      <div 
+        onDragStart={(e) => this.dragStartHandler(e, post)}
+        // onDragLeave={(e) => this.dragEndHandler(e)}
+        // onDragEnd={(e) => this.dragEndHandler(e)}
+        onDragOver={(e) => this.dragOverHandler(e)}
+        onDrop={(e) => this.dropHandler(e, post)}
+        draggable
+        className={classes.layoutsItems}
+      >
         <Post
           id={post.id}
           postRef={post.postRef} 
