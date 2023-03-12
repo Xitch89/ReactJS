@@ -12,6 +12,7 @@ class Content extends React.Component {
       isLessChecked: false,
       copyPostData: [],
       numberSortPostData: [],
+      selectedCard: null
     };
     const copyPostData = postData.slice();
     const numberSortPostData = this.sortByPostNumber(copyPostData);
@@ -114,6 +115,18 @@ class Content extends React.Component {
       });
     }
   };
+
+  // Click
+
+  handleCardClick = (id) => {
+    const { selectedCard } = this.state;
+    if (selectedCard === id) {
+      this.setState({ selectedCard: null });
+    } else {
+      this.setState({ selectedCard: id });
+    }
+  };
+
   // drag and drop
 
   sortPost = (a, b) => {
@@ -127,22 +140,32 @@ class Content extends React.Component {
     this.setState({ currentCurd: card });
   }
 
-  // dragEndHandler(e) {
-  // }
+  dragEndHandler(e) {
+    const eventTarget = e.target;
+    eventTarget.style.background = '';
+  }
 
   dragOverHandler(e) {
+    const eventTarget = e.target;
     e.preventDefault();
+    eventTarget.style.background = 'gray';
+  }
+
+  dragLeaveHandler(e) {
+    const eventTarget = e.target;
+    eventTarget.style.background = '';
   }
 
   dropHandler(e, card) {
     const { currentCurd, copyPostData } = this.state;
-    const newCopyPostData = [...copyPostData];
+    const eventTarget = e.target;
+    eventTarget.style.background = '';
     e.preventDefault();
-    const updatedCopyPostData = newCopyPostData.map((c) => {
+    const updatedCopyPostData = copyPostData.map((c) => {
       if (c.id === card.id) {
         return { ...c, order: currentCurd.order };
       }
-      if (c.id === currentCurd.id) {
+      if (c.id === currentCurd.order) {
         return { ...c, order: card.order };
       }
       return c;
@@ -169,12 +192,12 @@ class Content extends React.Component {
     const newPost = numberSortPostData.map((post) => (
       <div 
         onDragStart={(e) => this.dragStartHandler(e, post)}
-        // onDragLeave={(e) => this.dragEndHandler(e)}
-        // onDragEnd={(e) => this.dragEndHandler(e)}
+        onDragLeave={(e) => this.dragLeaveHandler(e)}
+        onDragEnd={(e) => this.dragEndHandler(e)}
         onDragOver={(e) => this.dragOverHandler(e)}
         onDrop={(e) => this.dropHandler(e, post)}
         draggable
-        className={classes.layoutsItems}
+        className={`${classes.layoutsItems} ${this.selectedCard ? 'classes.selected' : ''}`}
       >
         <Post
           id={post.id}
@@ -182,6 +205,8 @@ class Content extends React.Component {
           massage={post.massage} 
           image={post.image} 
           date={post.date}
+          onClick={() => this.handleCardClick(post.id)}
+          selectedCard={this.selectedCard}
         />
       </div>
     ));
