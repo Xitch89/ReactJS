@@ -12,7 +12,6 @@ class Content extends React.Component {
       isLessChecked: false,
       copyPostData: [],
       numberSortPostData: [],
-      selectedCard: null
     };
     const copyPostData = postData.slice();
     const numberSortPostData = this.sortByPostNumber(copyPostData);
@@ -118,12 +117,14 @@ class Content extends React.Component {
 
   // Click
 
-  handleCardClick = (id) => {
-    const { selectedCard } = this.state;
-    if (selectedCard === id) {
-      this.setState({ selectedCard: null });
+  handleCardClick = (e) => {
+    const clickedCard = e.currentTarget;
+    if (clickedCard.classList.contains('selected')) {
+      clickedCard.classList.remove('selected');
+      this.setState({ isSelected: false });
     } else {
-      this.setState({ selectedCard: id });
+      clickedCard.classList.add('selected');
+      this.setState({ isSelected: true });
     }
   };
 
@@ -137,7 +138,7 @@ class Content extends React.Component {
   };
 
   dragStartHandler(e, card) {
-    this.setState({ currentCurd: card });
+    this.setState({ currentCard: card });
   }
 
   dragEndHandler(e) {
@@ -157,15 +158,15 @@ class Content extends React.Component {
   }
 
   dropHandler(e, card) {
-    const { currentCurd, copyPostData } = this.state;
+    const { currentCard, copyPostData } = this.state;
     const eventTarget = e.target;
     eventTarget.style.background = '';
     e.preventDefault();
     const updatedCopyPostData = copyPostData.map((c) => {
       if (c.id === card.id) {
-        return { ...c, order: currentCurd.order };
+        return { ...c, order: currentCard.order };
       }
-      if (c.id === currentCurd.order) {
+      if (c.id === currentCard.order) {
         return { ...c, order: card.order };
       }
       return c;
@@ -175,7 +176,7 @@ class Content extends React.Component {
       isLessChecked: false,
       isDateChecked: false,
       isAlphabetChecked: false,
-      currentCurd: null,
+      currentCard: null,
       copyPostData: updatedCopyPostData,
       numberSortPostData: updatedNumberSortPostData
     });
@@ -187,17 +188,21 @@ class Content extends React.Component {
       isDateChecked,
       isLessChecked,
       numberSortPostData,
+      isSelected
     } = this.state;
+    // const cardClass = `${classes.layoutsItems} ${isSelected ? classes.selected : ''}`;
 
     const newPost = numberSortPostData.map((post) => (
-      <div 
+      <button 
+        type="button"
         onDragStart={(e) => this.dragStartHandler(e, post)}
         onDragLeave={(e) => this.dragLeaveHandler(e)}
         onDragEnd={(e) => this.dragEndHandler(e)}
         onDragOver={(e) => this.dragOverHandler(e)}
         onDrop={(e) => this.dropHandler(e, post)}
+        onClick={() => this.handleCardClick}
         draggable
-        className={`${classes.layoutsItems} ${this.selectedCard ? 'classes.selected' : ''}`}
+        className={`${classes.layoutsItems} ${isSelected ? classes.selected : ''}`} 
       >
         <Post
           id={post.id}
@@ -205,10 +210,8 @@ class Content extends React.Component {
           massage={post.massage} 
           image={post.image} 
           date={post.date}
-          onClick={() => this.handleCardClick(post.id)}
-          selectedCard={this.selectedCard}
         />
-      </div>
+      </button>
     ));
 
     return (
