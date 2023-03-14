@@ -12,6 +12,8 @@ class Content extends React.Component {
       isLessChecked: false,
       copyPostData: [],
       numberSortPostData: [],
+      clickedCards: [],
+      selectedCards: [],
     };
     const copyPostData = postData.slice();
     const numberSortPostData = this.sortByPostNumber(copyPostData);
@@ -19,12 +21,6 @@ class Content extends React.Component {
     this.state.numberSortPostData = numberSortPostData;
   }
   // default sort
-
-  componentDidMount() {
-    const { copyPostData } = this.state;
-    const numberSortPostData = this.sortByPostNumber(copyPostData);
-    this.setState({ numberSortPostData });
-  }
 
   sortByPostNumber = (post) => {
     const copyPostData = [...post];
@@ -95,10 +91,10 @@ class Content extends React.Component {
     return sortedPostData.slice(0, -10);
   };
 
-  handleCheckboxLessThan10 = (event) => {
+  handleCheckboxLessThan10 = (e) => {
     const { numberSortPostData, copyPostData } = this.state;
     const updatedNumberSortPostData = this.sortByLessThan10(numberSortPostData);
-    if (event.target.checked) {
+    if (e.target.checked) {
       this.setState({
         isLessChecked: true,
         isDateChecked: false,
@@ -117,24 +113,28 @@ class Content extends React.Component {
 
   // Click
 
-  handleCardClick = (e) => {
-    const clickedCard = e.currentTarget;
-    if (clickedCard.classList.contains('selected')) {
-      clickedCard.classList.remove('selected');
-      this.setState({ isSelected: false });
+  handleCardClick = (e, post) => {
+    const { clickedCards, selectedCards } = this.state;
+    const clickedIndex = clickedCards.indexOf(post.order);
+    if (clickedIndex !== -1) {
+      // Об'єкт вже був клікнутий, тому його треба видалити
+      this.setState({
+        clickedCards: clickedCards.filter((order) => order !== post.order),
+        selectedCards: selectedCards.filter((id) => id !== post.id)
+      });
     } else {
-      clickedCard.classList.add('selected');
-      this.setState({ isSelected: true });
+      // Об'єкт ще не був клікнутий, тому його треба додати
+      this.setState({
+        clickedCards: [...clickedCards, post.order],
+        selectedCards: [...selectedCards, post.id]
+      });
     }
   };
 
   // drag and drop
 
   sortPost = (a, b) => {
-    if (a.order > b.order) {
-      return 1;
-    }
-    return -1;
+    return a.order > b.order ? 1 : -1;
   };
 
   dragStartHandler(e, card) {
@@ -163,10 +163,10 @@ class Content extends React.Component {
     eventTarget.style.background = '';
     e.preventDefault();
     const updatedCopyPostData = copyPostData.map((c) => {
-      if (c.id === card.id) {
+      if (c.order === card.order) {
         return { ...c, order: currentCard.order };
       }
-      if (c.id === currentCard.order) {
+      if (c.order === currentCard.order) {
         return { ...c, order: card.order };
       }
       return c;
@@ -188,9 +188,9 @@ class Content extends React.Component {
       isDateChecked,
       isLessChecked,
       numberSortPostData,
-      isSelected
+      clickedCards,
+      selectedCards
     } = this.state;
-    // const cardClass = `${classes.layoutsItems} ${isSelected ? classes.selected : ''}`;
 
     const newPost = numberSortPostData.map((post) => (
       <button 
@@ -200,9 +200,11 @@ class Content extends React.Component {
         onDragEnd={(e) => this.dragEndHandler(e)}
         onDragOver={(e) => this.dragOverHandler(e)}
         onDrop={(e) => this.dropHandler(e, post)}
-        onClick={() => this.handleCardClick}
+        onClick={(e) => this.handleCardClick(e, post)}
         draggable
-        className={`${classes.layoutsItems} ${isSelected ? classes.selected : ''}`} 
+        className={`${classes.layoutsItems} 
+        ${clickedCards.includes(post.order) ? classes.selected : ''} 
+        ${selectedCards.includes(post.id) ? classes.selected : ''}`} 
       >
         <Post
           id={post.id}
