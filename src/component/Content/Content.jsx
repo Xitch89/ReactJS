@@ -1,5 +1,4 @@
 import React from 'react';
-import { string } from 'prop-types';
 import classes from './css/Content.module.css';
 import postData from '../../constants/postData';
 import Post from './ContentPost';
@@ -21,7 +20,7 @@ class Content extends React.Component {
       selectedCards: [],
       selectedObjectIndex: [],
       activeEvent: null,
-      activeFilter: string
+      activeFilter: []
     };
     const copyPostData = postData.slice();
     const numberSortPostData = this.sortByPostNumber(copyPostData);
@@ -65,12 +64,12 @@ class Content extends React.Component {
     const { ctrlKey } = e;
     if (ctrlKey) {
       switch (e.keyCode) {
-        case 38: // код клавіші вверх
+        case 73: // код клавіші вверх
           e.preventDefault();
           console.log('Up key pressed');
           this.highlightPreviousCard();
           break;
-        case 40: // код клавіші вниз
+        case 75: // код клавіші вниз
           e.preventDefault();
           console.log('Down key pressed');
           this.highlightNextCard();
@@ -226,22 +225,22 @@ class Content extends React.Component {
 
   dragStartHandler(e, card) {
     this.setState({
-      activeEvent: 'dragGray',
+      activeEvent: card.order,
       currentCard: card,
     });
   }
 
   dragEndHandler() {
-    this.setState({ activeEvent: null });
+    this.setState({ activeEvent: [] });
   }
 
-  dragOverHandler(e) {
+  dragOverHandler(e, card) {
     e.preventDefault();
-    this.setState({ activeEvent: 'dragGray' });
+    this.setState({ activeEvent: card.order });
   }
 
   dragLeaveHandler() {
-    this.setState({ activeEvent: null });
+    this.setState({ activeEvent: [] });
   }
 
   dropHandler(e, card) {
@@ -266,7 +265,7 @@ class Content extends React.Component {
       currentCard: null,
       copyPostData: updatedCopyPostData,
       numberSortPostData: updatedNumberSortPostData,
-      activeEvent: null
+      activeEvent: []
     });
   }
 
@@ -283,9 +282,6 @@ class Content extends React.Component {
       selectedObjectIndex,
       activeEvent
     } = this.state;
-    const cardStyle = {
-      background: activeEvent === 'dragGray' ? 'gray' : ''
-    };
 
     const newPost = numberSortPostData.map((post) => (
       <button 
@@ -293,17 +289,16 @@ class Content extends React.Component {
         onDragStart={(e) => this.dragStartHandler(e, post)}
         onDragLeave={(e) => this.dragLeaveHandler(e)}
         onDragEnd={(e) => this.dragEndHandler(e)}
-        onDragOver={(e) => this.dragOverHandler(e)}
+        onDragOver={(e) => this.dragOverHandler(e, post)}
         onDrop={(e) => this.dropHandler(e, post)}
         onClick={(e) => this.handleCardClick(e, post)}
         onKeyDown={(e) => this.handleKeyDown(e)}
-        style={cardStyle}
         draggable
         className={`${classes.layoutsItems} 
         ${clickedCards.includes(post.order) ? classes.selected : ''} 
         ${selectedCards.includes(post.id) ? classes.selected : ''}
-        ${selectedObjectIndex.includes(previousIndex || nextIndex) && classes.selected}`}
-        // ${activeEvent !== null ? classes.selected : ''}`}
+        ${selectedObjectIndex.includes(previousIndex || nextIndex) && classes.selected}
+        ${activeEvent === post.order ? classes.selected : ''}`}
       >
         <Post
           id={post.id}
