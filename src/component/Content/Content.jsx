@@ -265,7 +265,9 @@ class Content extends React.Component {
       currentCard: null,
       copyPostData: updatedCopyPostData,
       numberSortPostData: updatedNumberSortPostData,
-      activeEvent: []
+      activeEvent: [],
+      clickedCards: [],
+      selectedCards: []
     });
   }
 
