@@ -1,7 +1,12 @@
 import React from 'react';
+import { string } from 'prop-types';
 import classes from './css/Content.module.css';
 import postData from '../../constants/postData';
 import Post from './ContentPost';
+
+const FILTERS = {
+  DATE: 'date', ALPHABET: 'alphabet', LESS_THAN_10: 'lessThan10', DEF: 'default'
+};
 
 class Content extends React.Component {
   constructor(props) {
@@ -14,12 +19,94 @@ class Content extends React.Component {
       numberSortPostData: [],
       clickedCards: [],
       selectedCards: [],
+      selectedObjectIndex: [],
+      activeEvent: null,
+      activeFilter: string
     };
     const copyPostData = postData.slice();
     const numberSortPostData = this.sortByPostNumber(copyPostData);
     this.state.copyPostData = copyPostData;
     this.state.numberSortPostData = numberSortPostData;
   }
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeyDown);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { activeFilter, copyPostData } = this.state;
+    if (prevState.activeFilter !== activeFilter) {
+      let numberSortPostData;
+      switch (activeFilter) {
+        case FILTERS.DEF:
+          numberSortPostData = this.sortByPostNumber(copyPostData);
+          break;
+        case FILTERS.DATE:
+          numberSortPostData = this.sortByIdDate(copyPostData);
+          break; 
+        case FILTERS.ALPHABET:
+          numberSortPostData = this.sortByIdAlphabet(copyPostData);
+          break;
+        case FILTERS.LESS_THAN_10:
+          numberSortPostData = this.sortByLessThan10(copyPostData);
+          break;
+        default:
+          numberSortPostData = copyPostData.slice();
+      }
+      this.setState({ numberSortPostData });
+    }
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeyDown);
+  }
+
+  handleKeyDown = (e) => {
+    const { ctrlKey } = e;
+    if (ctrlKey) {
+      switch (e.keyCode) {
+        case 38: // код клавіші вверх
+          e.preventDefault();
+          console.log('Up key pressed');
+          this.highlightPreviousCard();
+          break;
+        case 40: // код клавіші вниз
+          e.preventDefault();
+          console.log('Down key pressed');
+          this.highlightNextCard();
+          break;
+        default:
+          break;
+      }
+    }
+  };
+
+  highlightPreviousCard = () => {
+    console.log('previous card');
+    const { selectedObjectIndex } = this.state;
+    const currentIndex = selectedObjectIndex.length > 0 ? selectedObjectIndex[selectedObjectIndex.length - 1] : -1;
+    const previousIndex = currentIndex - 1;
+    if (previousIndex >= 0 && previousIndex < document.querySelectorAll('.layoutsItems').length) {
+      const newSelectedObjectIndex = selectedObjectIndex.filter((id) => id !== currentIndex);
+      this.setState({
+        selectedObjectIndex: [...newSelectedObjectIndex, previousIndex],
+      });
+    }
+  };
+
+  highlightNextCard = () => {
+    console.log('next card');
+    const { selectedObjectIndex } = this.state;
+    const currentIndex = selectedObjectIndex.length > 0 ? selectedObjectIndex[selectedObjectIndex.length - 1] : -1;
+    const nextIndex = currentIndex + 1;
+    if (nextIndex >= 0 && nextIndex < document.querySelectorAll('.layoutsItems').length) {
+      const newSelectedObjectIndex = selectedObjectIndex.filter((id) => id !== currentIndex);
+      this.setState({
+        selectedObjectIndex: [...newSelectedObjectIndex, nextIndex],
+      });
+    }
+  };
+
   // default sort
 
   sortByPostNumber = (post) => {
@@ -43,20 +130,20 @@ class Content extends React.Component {
   };
 
   handleCheckboxAlphabetChange = (event) => {
-    const { numberSortPostData, copyPostData } = this.state; 
-    const updatedNumberSortPostData = this.sortByIdAlphabet(numberSortPostData);
+    const { copyPostData } = this.state; 
+    const updatedNumberSortPostData = this.sortByIdAlphabet(copyPostData);
     if (event.target.checked) {
       this.setState({
         isAlphabetChecked: true,
         isDateChecked: false,
         isLessChecked: false,
+        activeFilter: FILTERS.ALPHABET,
         numberSortPostData: updatedNumberSortPostData
       });
     } else {
       this.setState({
         isAlphabetChecked: false,
-        isDateChecked: false,
-        isLessChecked: false,
+        activeFilter: FILTERS.DEF,
         numberSortPostData: this.sortByPostNumber(copyPostData)
       });
     }
@@ -67,20 +154,20 @@ class Content extends React.Component {
   };
 
   handleCheckboxDateChange = (event) => {
-    const { numberSortPostData, copyPostData } = this.state;
-    const updatedNumberSortPostData = this.sortByIdDate(numberSortPostData);
+    const { copyPostData } = this.state;
+    const updatedNumberSortPostData = this.sortByIdDate(copyPostData);
     if (event.target.checked) {
       this.setState({
         isDateChecked: true,
         isAlphabetChecked: false,
         isLessChecked: false,
+        activeFilter: FILTERS.DATE,
         numberSortPostData: updatedNumberSortPostData
       });
     } else {
       this.setState({
         isDateChecked: false,
-        isAlphabetChecked: false,
-        isLessChecked: false,
+        activeFilter: FILTERS.DEF,
         numberSortPostData: this.sortByPostNumber(copyPostData)
       });
     }
@@ -92,20 +179,20 @@ class Content extends React.Component {
   };
 
   handleCheckboxLessThan10 = (e) => {
-    const { numberSortPostData, copyPostData } = this.state;
-    const updatedNumberSortPostData = this.sortByLessThan10(numberSortPostData);
+    const { copyPostData } = this.state;
+    const updatedNumberSortPostData = this.sortByLessThan10(copyPostData);
     if (e.target.checked) {
       this.setState({
         isLessChecked: true,
         isDateChecked: false,
         isAlphabetChecked: false,
+        activeFilter: FILTERS.LESS_THAN_10,
         numberSortPostData: updatedNumberSortPostData
       });
     } else {
       this.setState({
         isLessChecked: false,
-        isDateChecked: false,
-        isAlphabetChecked: false,
+        activeFilter: FILTERS.DEF,
         numberSortPostData: this.sortByPostNumber(copyPostData)
       });
     }
@@ -138,23 +225,23 @@ class Content extends React.Component {
   };
 
   dragStartHandler(e, card) {
-    this.setState({ currentCard: card });
+    this.setState({
+      activeEvent: 'dragGray',
+      currentCard: card,
+    });
   }
 
-  dragEndHandler(e) {
-    const eventTarget = e.target;
-    eventTarget.style.background = '';
+  dragEndHandler() {
+    this.setState({ activeEvent: null });
   }
 
   dragOverHandler(e) {
-    const eventTarget = e.target;
     e.preventDefault();
-    eventTarget.style.background = 'gray';
+    this.setState({ activeEvent: 'dragGray' });
   }
 
-  dragLeaveHandler(e) {
-    const eventTarget = e.target;
-    eventTarget.style.background = '';
+  dragLeaveHandler() {
+    this.setState({ activeEvent: null });
   }
 
   dropHandler(e, card) {
@@ -178,7 +265,8 @@ class Content extends React.Component {
       isAlphabetChecked: false,
       currentCard: null,
       copyPostData: updatedCopyPostData,
-      numberSortPostData: updatedNumberSortPostData
+      numberSortPostData: updatedNumberSortPostData,
+      activeEvent: null
     });
   }
 
@@ -189,8 +277,15 @@ class Content extends React.Component {
       isLessChecked,
       numberSortPostData,
       clickedCards,
-      selectedCards
+      selectedCards,
+      previousIndex,
+      nextIndex,
+      selectedObjectIndex,
+      activeEvent
     } = this.state;
+    const cardStyle = {
+      background: activeEvent === 'dragGray' ? 'gray' : ''
+    };
 
     const newPost = numberSortPostData.map((post) => (
       <button 
@@ -201,10 +296,14 @@ class Content extends React.Component {
         onDragOver={(e) => this.dragOverHandler(e)}
         onDrop={(e) => this.dropHandler(e, post)}
         onClick={(e) => this.handleCardClick(e, post)}
+        onKeyDown={(e) => this.handleKeyDown(e)}
+        style={cardStyle}
         draggable
         className={`${classes.layoutsItems} 
         ${clickedCards.includes(post.order) ? classes.selected : ''} 
-        ${selectedCards.includes(post.id) ? classes.selected : ''}`} 
+        ${selectedCards.includes(post.id) ? classes.selected : ''}
+        ${selectedObjectIndex.includes(previousIndex || nextIndex) && classes.selected}`}
+        // ${activeEvent !== null ? classes.selected : ''}`}
       >
         <Post
           id={post.id}
