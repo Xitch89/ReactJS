@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LandingVr1 from '../../assets/image_detail_page/landing_vr1.jpg';
 import DetailedPage from '../camon/DetailedPage/DetailedPage';
+import withScrollToTop from '../withScrollToTop';
 
 class Landing1 extends Component {
   render() {
@@ -10,4 +11,6 @@ class Landing1 extends Component {
   }
 }
 
-export default Landing1;
+const Landing1WithScrollToTop = withScrollToTop(Landing1);
+
+export default Landing1WithScrollToTop;
