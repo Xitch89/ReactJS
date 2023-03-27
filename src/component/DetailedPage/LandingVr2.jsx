@@ -11,6 +11,4 @@ class Landing2 extends Component {
   }
 }
 
-const Landing2WithScrollToTop = withScrollToTop(Landing2);
-
-export default Landing2WithScrollToTop;
+export default withScrollToTop(Landing2);

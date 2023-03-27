@@ -7,7 +7,7 @@ function withScrollToTop(Component) {
     useEffect(() => {
       window.scrollTo(0, 0);
     }, [pathname]);
-
+    
     return React.createElement(Component, props);
   }
   return ScrollToTop;

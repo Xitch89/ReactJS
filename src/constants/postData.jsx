@@ -22,10 +22,10 @@ import StyleGuide from '../assets/images/style_guide.png';
 
 const postData = [
   {
-    postRef: 'landing-vr2', massage: 'Landing vr.2', image: LandingVr2, date: '11.03.2023', id: 2, order: 2 
+    postRef: 'landing-vr2', massage: 'Landing vr.2', image: LandingVr2, date: '11.03.2023', id: 2, order: 1 
   },
   {
-    postRef: 'landing-vr1', massage: 'Landing vr.1', image: LandingVr1, date: '10.03.2023', id: 1, order: 1
+    postRef: 'landing-vr1', massage: 'Landing vr.1', image: LandingVr1, date: '10.03.2023', id: 1, order: 2
   },
   {
     postRef: 'landing-vr3', massage: 'Landing vr.3', image: LandingVr3, date: '12.03.2023', id: 3, order: 3

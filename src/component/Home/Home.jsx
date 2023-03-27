@@ -11,8 +11,7 @@ import SearchWeather from '../weather/SearchWeather/SearchWeather';
 import WeatherInfo from '../weather/WeatherInfo/WeatherInfo';
 import classes from './Home.module.css';
 import withScrollToTop from '../withScrollToTop';
-
-const API_KEY = '7b2c82371fe17f86708068b387c41dfd';
+import { API_KEY } from '../../constants/constants';
 
 class Home extends Component {
   constructor() {
@@ -124,6 +123,4 @@ class Home extends Component {
   }
 }
 
-const withHomeScrollToTop = withScrollToTop(Home);
-
-export default withHomeScrollToTop;
+export default withScrollToTop(Home);
