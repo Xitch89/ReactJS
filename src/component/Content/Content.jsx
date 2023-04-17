@@ -25,16 +25,11 @@ class Content extends React.Component {
       [FILTERS.DATE]: this.sortByIdDate,
       [FILTERS.ALPHABET]: this.sortByIdAlphabet,
       [FILTERS.LESS_THAN_10]: this.sortByLessThan10,
-      [FILTERS.NONE]: (data) => data
     };
     this.state.copyPostData = copyPostData;
     this.state.numberSortPostData = numberSortPostData;
     this.state.sortMethods = sortMethods;
   }
-
-  // componentDidMount() {
-  //   document.addEventListener('keydown', this.handleKeyDown);
-  // }
 
   componentDidUpdate(prevProps, prevState) {
     const { activeFilter, copyPostData, sortMethods } = this.state;
@@ -45,18 +40,18 @@ class Content extends React.Component {
     }
   }
 
-  // componentWillUnmount() {
-  //   document.removeEventListener('keydown', this.handleKeyDown);
-  // }
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeyDown);
+  }
 
-  handleKeyDown = (event) => {
+  handleKeyDown = (e) => {
     const { selectedCards, numberSortPostData } = this.state;
-    const keyCode = event.keyCode || event.which;
-    const ctrlKey = event.ctrlKey || event.metaKey; // for Mac
+    const keyCode = e.keyCode || e.which;
+    const ctrlKey = e.ctrlKey || e.metaKey; // for Mac
     const isK = keyCode === ARROW_UP_KEY_CODE;
     const isM = keyCode === ARROW_DOWN_KEY_CODE;
     if (ctrlKey && (isK || isM)) {
-      event.preventDefault(); // prevent default behavior of the browser (e.g. scrolling)
+      e.preventDefault();
       const increment = isK ? 1 : -1;
       const newSelectedCards = selectedCards.map((id) => {
         let index = numberSortPostData.findIndex((post) => post.id === id);
