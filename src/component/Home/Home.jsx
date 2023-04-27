@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import Content from '../Content/Content';
 import ExampleLayouts from '../camon/ExampleLayouts/ExampleLayouts';
 import FollowSocial from '../FollowSocial/FollowSocial';
@@ -22,14 +22,6 @@ function Home() {
     wind: undefined,
     error: undefined,
   });
-
-  const cityRef = useRef(null);
-
-  useEffect(() => {
-    if (cityRef.current) {
-      cityRef.current.focus();
-    }
-  }, []);
 
   const getWeather = async (e) => {
     e.preventDefault();
