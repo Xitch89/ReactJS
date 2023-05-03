@@ -13,6 +13,19 @@ import classes from './Home.module.css';
 import withScrollToTop from '../withScrollToTop';
 import { API_KEY } from '../../constants/constants';
 
+const WEATHER_ERROR_MESSAGE = 'The name of the city is incorrect';
+const WEATHER_ERROR_GIF = (
+  <div className={classes.weatherErrorGif}>
+    <p>{WEATHER_ERROR_MESSAGE}</p>
+    <img
+      src="https://i.gifer.com/FZ26.gif"
+      alt="Gif 404"
+      width="100px"
+      height="75px"
+    />
+  </div>
+);
+
 function Home() {
   const [fetchedWeatherData, setWeatherData] = useState({
     temp: undefined,
@@ -44,49 +57,19 @@ function Home() {
         if (error.response?.status === 404) {
           setWeatherData({
             city: undefined,
-            error: (
-              <div className={classes.weatherErrorGif}>
-                <p>The name of the city is incorrect</p>
-                <img
-                  src="https://i.gifer.com/FZ26.gif"
-                  alt="Gif 404"
-                  width="100px"
-                  height="75px"
-                />
-              </div>
-            ),
+            error: WEATHER_ERROR_GIF,
           });
         } else {
           setWeatherData({
             city: undefined,
-            error: (
-              <div className={classes.weatherErrorGif}>
-                <p>The name of the city is incorrect</p>
-                <img
-                  src="https://i.gifer.com/FZ26.gif"
-                  alt="Gif 404"
-                  width="100px"
-                  height="75px"
-                />
-              </div>
-            ),
+            error: WEATHER_ERROR_GIF,
           });
         }
       }
     } else {
       setWeatherData({
         city: undefined,
-        error: (
-          <div className={classes.weatherErrorGif}>
-            <p>Enter your city</p>
-            <img
-              src="https://i.gifer.com/FZ26.gif"
-              alt="Gif 404"
-              width="100px"
-              height="75px"
-            />
-          </div>
-        ),
+        error: WEATHER_ERROR_GIF,
       });
     }
   };
