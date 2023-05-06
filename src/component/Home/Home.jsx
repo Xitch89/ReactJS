@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Content from '../Content/Content';
 import ExampleLayouts from '../camon/ExampleLayouts/ExampleLayouts';
 import FollowSocial from '../FollowSocial/FollowSocial';
@@ -13,20 +14,22 @@ import classes from './Home.module.css';
 import withScrollToTop from '../withScrollToTop';
 import { API_KEY } from '../../constants/constants';
 
-const WEATHER_ERROR_MESSAGE = 'The name of the city is incorrect';
-const WEATHER_ERROR_GIF = (
-  <div className={classes.weatherErrorGif}>
-    <p>{WEATHER_ERROR_MESSAGE}</p>
-    <img
-      src="https://i.gifer.com/FZ26.gif"
-      alt="Gif 404"
-      width="100px"
-      height="75px"
-    />
-  </div>
-);
-
 function Home() {
+  const { t } = useTranslation();
+  function getWeatherErrorGif(errorMessage) {
+    return (
+      <div className={classes.weatherErrorGif}>
+        <p>{errorMessage}</p>
+        <img
+          src="https://i.gifer.com/FZ26.gif"
+          alt="Gif 404"
+          width="100px"
+          height="75px"
+        />
+      </div>
+    );
+  }
+
   const [fetchedWeatherData, setWeatherData] = useState({
     temp: undefined,
     city: undefined,
@@ -41,35 +44,21 @@ function Home() {
     const city = e.target.elements.city.value;
     const HTTP_INFO = `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${API_KEY}&units=metric`;
 
-    if (city) {
-      try {
-        const apiUrl = await fetch(HTTP_INFO);
-        const weatherData = await apiUrl.json();
+    try {
+      const apiUrl = await fetch(HTTP_INFO);
+      const weatherData = await apiUrl.json();
 
-        setWeatherData({
-          temp: weatherData.main.temp,
-          city: weatherData.name,
-          humidity: weatherData.main.humidity,
-          wind: weatherData.wind.speed,
-          error: undefined,
-        });
-      } catch (error) {
-        if (error.response?.status === 404) {
-          setWeatherData({
-            city: undefined,
-            error: WEATHER_ERROR_GIF,
-          });
-        } else {
-          setWeatherData({
-            city: undefined,
-            error: WEATHER_ERROR_GIF,
-          });
-        }
-      }
-    } else {
+      setWeatherData({
+        temp: weatherData.main.temp,
+        city: weatherData.name,
+        humidity: weatherData.main.humidity,
+        wind: weatherData.wind.speed,
+        error: undefined,
+      });
+    } catch (error) {
       setWeatherData({
         city: undefined,
-        error: WEATHER_ERROR_GIF,
+        error: getWeatherErrorGif(t('errorMas')),
       });
     }
   };
@@ -80,7 +69,7 @@ function Home() {
   return (
     <>
       <MainImage />
-      <ExampleLayouts grayText="Our Core Layouts" yellowText="Template Pages" />
+      <ExampleLayouts grayText={t('coreLayouts')} yellowText={t('templatePages')} />
       <SearchWeather weatherMethod={getWeather} />
       <WeatherInfo 
         temp={temp}
@@ -92,7 +81,7 @@ function Home() {
       />
       <Content />
       <BottomBlock />
-      <ExampleLayouts grayText="Our Core Features" yellowText="Our Services" />
+      <ExampleLayouts grayText={t('coreLayouts2')} yellowText={t('templatePages2')} />
       <OurServices />
       <FollowSocial />
       <SubscribeBlock />
