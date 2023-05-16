@@ -15,7 +15,7 @@
 
 .error_massage {
     color: rgb(199, 233, 180);
-    font: 400 45px/65px "Old+Standard+TT";
+    font: var(--old-standart-45-65);
 }
 
 /* додати медіа*/

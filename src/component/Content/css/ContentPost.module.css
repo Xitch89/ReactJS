@@ -5,8 +5,8 @@
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  font: 400 13px/23px "Old+Standard+TT";
-  color: #ffffff;
+  font: var(old-standart-13-23);
+  color: var(--white);
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 20px 0 41px 0;
@@ -17,6 +17,6 @@
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: flex-end;
-  font: 400 13px/23px "Old+Standard+TT";
-  color: #ffffff;
+  font: var(old-standart-13-23);
+  color: var(--white);
 }

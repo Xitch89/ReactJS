@@ -15,36 +15,35 @@
   }
 }
 .mainImage_smallTitleText {
-  font: 400 12px/22px "Old+Standard+TT";
+  font: var(--old-standart-12-22);
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #ffae2b;
+  color: var(--yellow-color);
   text-align: center;
   padding-bottom: 15px;
 }
 .mainImage_titleText {
-  font: 400 70px/80px "Old+Standard+TT";
+  font: var(--old-standart-70-80);
   letter-spacing: 1px;
-  color: #ffffff;
+  color: var(--white);
   text-align: center;
   padding-bottom: 35px;
 }
 @media (max-width: 565px) {
   .mainImage_titleText {
-    font: 300 35px/40px "Old+Standard+TT";
+    font: var(--old-standart-35-40);
   }
 }
 .mainImage_linkLayout {
   display: flex;
   align-items: center;
   justify-content: center;
-  font: 400 11px/22px "Old+Standard+TT";
-  color: #181511;
+  font: var(--old-standart-11-22);
   box-sizing: border-box;
   width: 143px;
   height: 50px;
-  background: #ffae2b;
-  border: 1px solid #ffae2b;
+  background: var(--yellow-color);
+  border: 1px solid var(--yellow-color);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -53,9 +52,9 @@
   transition: 0.4s;
 }
 .mainImage_linkLayout:hover {
-  border: 1px solid #00ffc8;
-  color: #00ffc8;
-  background: #786740;
+  border: 1px solid var(--green);
+  color: var(--green);
+  background: var(--followSoc-bg-color);
 }
 @media (max-width: 565px) {
   .mainImage_linkLayout {

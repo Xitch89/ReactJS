@@ -1,10 +1,4 @@
-:root {
-  --yellow: #ffae2b;
-  --black: #000000;
-  --border-color: #4b4136;
-  --green: #00ffc8;
-  --followSoc-bg-color: #786740;
-}
+
 .followSocial {
   display: flex;
   flex-direction: column;
@@ -86,7 +80,7 @@
 .followSocial_wrapper {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  font: 400 15px/35px "Old+Standard+TT";
+  font: var(--old-standart-15-35);
 }
 @media (max-width: 767px) {
   .followSocial_wrapper {
@@ -95,15 +89,15 @@
 }
 .followSocial_yellowTextLight,
 .followSocial_yellowTextDark {
-  font: 400 40px/50px "Old+Standard+TT";
-  color: var(--yellow);
+  font: var(--old-standart-40-50);
+  color: var(--yellow-color);
   padding: 61px 50px 40px 50px;
 }
 .followSocial_yellowTextLight {
-  color: var(--black);
+  color: var(--core-light-color);
 }
 .followSocial_yellowTextDark {
-  color: var(--yellow);
+  color: var(--yellow-color);
 }
 @media (max-width: 991px) {
   .followSocial_yellowTextLight,
@@ -126,7 +120,7 @@
 @media (max-width: 400px) {
   .followSocial_yellowTextLight,
   .followSocial_yellowTextDark {
-    font: 300 30px/35px "Old+Standard+TT";
+    font: var(--old-standart-30-35);
   }
 }
 .followSocial_socImg {
@@ -136,14 +130,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font: 400 15px/35px "Old+Standard+TT";
-  color: var(--black);
+  font: var(--old-standart-15-35);
+  color: var(--core-light-color);
   box-sizing: border-box;
   width: 143px;
   height: 50px;
   margin-left: 45px;
-  background: var(--yellow);
-  border: 1px solid var(--yellow);
+  background: var(--yellow-color);
+  border: 1px solid var(--yellow-color);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;

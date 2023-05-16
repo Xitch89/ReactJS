@@ -34,5 +34,5 @@
   transition: 0.2s;
 }
 .socSvg:hover * {
-  fill: #2eac89;
+  fill: var(--soc-icon-svg);
 }

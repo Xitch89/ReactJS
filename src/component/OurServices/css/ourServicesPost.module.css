@@ -8,34 +8,34 @@
 }
 .ourServices_yellowTextLight,
 .ourServices_yellowTextDark {
-  font: 400 24px/34px "Old+Standard+TT";
+  font: var(--old-standart-24-34);
   padding: 20px 0 10px 61px;
 }
 .ourServices_yellowTextLight {
-  color: #000000;
+  color: var(--core-light-color);
 }
 .ourServices_yellowTextDark {
-  color: #ffae2b;
+  color: var(--yellow-color);
 }
 .ourServices_grayTextLight,
 .ourServices_grayTextDark {
-  font: 400 15px/26px "Old+Standard+TT";
+  font: var(--old-standart-15-26);
   padding: 0 0 5px 61px;
 }
 .ourServices_grayTextLight {
-  color: #000000;
+  color: var(--core-light-color);
 }
 .ourServices_grayTextDark {
-  color: #aca592;
+  color: var(--core-dark-color);
 }
 .ourServices_graySmallTextLight,
 .ourServices_graySmallTextDark {
-  font: 400 11px/26px "Old+Standard+TT";
+  font: var(--old-standart-12-26);
   padding: 0 117px 76px 61px;
 }
 .ourServices_graySmallTextLight {
-  color: #000000;
+  color: var(--core-light-color);
 }
 .ourServices_graySmallTextDark {
-  color: #aca592;
+  color: var(--core-dark-color);
 }

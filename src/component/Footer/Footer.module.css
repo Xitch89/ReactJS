@@ -1,14 +1,7 @@
-:root {
-  --footer-bg-color: #4b4136;
-  --footer-text-color-dark: #ffae2b;
-  --footer-text-color-light: #000000;
-  --footer-text-hover-color: #00ffc8;
-  --footer-gray-text-color: #aca592;
-}
 
 .footerDark,
 .footerLight {
-  border-top: 1px solid var(--footer-bg-color);
+  border-top: 1px solid var(--border-color);
   margin: 0 120px;
 }
 
@@ -32,7 +25,7 @@
 
 .footerDark a,
 .footerLight a {
-  font: 400 12px/30px "Old+Standard+TT";
+  font: var(--old-standart-12-30);
   margin-left: 5px;
   -webkit-transition: 0.2s;
   -moz-transition: 0.2s;
@@ -40,19 +33,19 @@
 }
 
 .footerDark a {
-  color: var(--footer-text-color-dark);
+  color: var(--yellow-color);
 }
 
 .footerDark a:hover {
-  color: var(--footer-text-hover-color);
+  color: var(--green);
 }
 
 .footerLight a {
-  color: var(--footer-text-color-light);
+  color: var(--core-light-color);
 }
 
 .footerLight a:hover {
-  color: var(--footer-text-color-dark);
+  color: var(--yellow-color);
 }
 
 .footer_container {
@@ -61,18 +54,18 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  font: 400 14px/18px "Old+Standard+TT";
+  font: var(--old-standart-14-18);
   height: 80px;
 }
 
 .footer_grayTextDark,
 .footer_grayTextLight {
-  font: 400 14px/18px "Old+Standard+TT";
-  color: var(--footer-gray-text-color);
+  font: var(--old-standart-14-18);
+  color: var(--core-dark-color);
 }
 
 .footer_grayTextLight {
-  color: var(--footer-text-color-light);
+  color: var(--core-light-color);
 }
 
 .footer_powered {
@@ -84,7 +77,7 @@
 }
 
 .footer_rightRefBorder {
-  border-left: 1px solid var(--footer-bg-color);
-  border-right: 1px solid var(--footer-bg-color);
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
   padding: 0 5px;
 }

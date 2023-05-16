@@ -1,3 +1,61 @@
+:root {
+  --main-bg-light-color: #f6e192f8;
+  --main-bg-color: #181511;
+  --core-light-color: #000000;
+  --core-dark-color: #aca592;
+  --yellow-color: #ffae2b;
+  --bg-color: rgba(17, 16, 16, 0.8);
+  --header-bg-color: rgba(0, 0, 0, 0.8);
+  --box-shadow: rgba(0, 0, 0, 0.4);
+  --toggle-menu-bg: rgba(0, 0, 0, 0.2);
+  --border-color: #4b4136;
+  --selected-bg-color: rgba(255, 255, 255, 0.8);
+  --shadow-color-1: rgba(165, 126, 126, 0.6235294118);
+  --shadow-color-2: rgba(146, 118, 118, 0.831372549);
+  --shadow-color-3: rgba(146, 118, 118, 0.831372549);
+  --shadow-color-4: rgba(146, 118, 118, 0.831372549);
+  --shadow-color-5: rgba(146, 118, 118, 0.831372549);
+  --hover-shadow-color-1: #ffffff;
+  --hover-shadow-color-2: rgba(126, 77, 148, 0.2509803922);
+  --hover-shadow-color-3: rgba(221, 147, 255, 0.2509803922);
+  --hover-shadow-color-4: rgba(114, 112, 164, 0.3176470588);
+  --hover-shadow-color-5: rgba(222, 228, 254, 0.2784313725);
+  --checkmark-bg-color: #eee;
+  --medium-gray: #ccc;
+  --white: #ffffff;
+  --green: #00ffc8;
+  --soc-icon-svg: #2eac89;
+  --followSoc-bg-color: #786740;
+  --weather-bg-color: #786740;
+  --weather-result: #e4ddc8;
+  --old-standart-13-23: 400 13px/23px "Old+Standard+TT";
+  --old-standart-11-22: 400 11px/22px "Old+Standard+TT";
+  --old-standart-11-24: 400 11px/24px "Old+Standard+TT";
+  --old-standart-12-26: 400 12px/26px "Old+Standard+TT";
+  --old-standart-12-20: 400 12px/20px "Old+Standard+TT";
+  --old-standart-12-22: 400 12px/22px "Old+Standard+TT";
+  --old-standart-12-28: 400 12px/28px "Old+Standard+TT";
+  --old-standart-12-30: 400 12px/30px "Old+Standard+TT";
+  --old-standart-14-18: 400 14px/18px "Old+Standard+TT";
+  --old-standart-14-20: 400 14px/20px "Old+Standard+TT";
+  --old-standart-15-26: 400 15px/26px "Old+Standard+TT";
+  --old-standart-18-25: 400 18px/25px "Old+Standard+TT";
+  --old-standart-22-28: 400 22px/28px "Old+Standard+TT";
+  --old-standart-24-34: 400 24px/34px "Old+Standard+TT";
+  --old-standart-25-35: 400 25px/35px "Old+Standard+TT";
+  --old-standart-30-40: 300 30px/40px "Old+Standard+TT";
+  --old-standart-15-25: 400 15px/25px "Old+Standard+TT";
+  --old-standart-15-35: 400 15px/35px "Old+Standard+TT";
+  --old-standart-30-35: 300 30px/35px "Old+Standard+TT";
+  --old-standart-35-40: 300 35px/40px "Old+Standard+TT";
+  --old-standart-40-50: 400 40px/50px "Old+Standard+TT";
+  --old-standart-300-40-50: 300 40px/50px "Old+Standard+TT";
+  --old-standart-45-65: 400 45px/65px "Old+Standard+TT";
+  --old-standart-60-70: 400 60px/70px "Old+Standard+TT";
+  --old-standart-70-80: 400 70px/80px "Old+Standard+TT";
+  --text-font: 400 50px/60px "Old+Standard+TT";
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -43,7 +101,7 @@ body{
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  background: #181511;
+  background: var(--main-bg-color);
   overflow-x: hidden;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -96,11 +154,11 @@ h6 {
 }
 
 #dark {
-    background: #181511;
+    background: var(--main-bg-color);
 }
 
 #light {
-    background: #f6e192f8;
+    background: var(--main-bg-light-color);
 }
 
 /*flax-box*/

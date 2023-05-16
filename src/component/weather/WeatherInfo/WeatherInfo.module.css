@@ -1,16 +1,16 @@
 
 .weatherResultDark,
 .weatherResultLight {
-    font: 400 18px/25px "Old+Standard+TT";
+    font: var(--old-standart-18-25);
     margin: 0 0 30px 120px;
 }
 
 .weatherResultDark {
-    color: #e4ddc8;
+    color: var(--weather-result)
 }
 
 .weatherResultLight {
-    color: #000000;
+    color: var(--core-light-color);
 }
 
 @media (max-width: 991px) {

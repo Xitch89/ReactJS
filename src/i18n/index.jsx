@@ -19,8 +19,8 @@ i18n.use(initReactI18next).use(LanguageDetector).init({
     useSuspense: true,
   },
   detection: {
-    order: ['localStorage', 'navigator'],
-    caches: ['localStorage'],
+    order: ['cookie', 'localStorage', 'navigator'],
+    caches: ['cookie'],
     lookupLocalStorage: 'i18nextLng',
     fallbackLng: 'en',
   }

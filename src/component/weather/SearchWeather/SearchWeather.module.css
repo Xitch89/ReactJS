@@ -38,21 +38,21 @@
     -webkit-box-sizing: border-box;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
-    border: 1px solid #4b4136;
-    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    background-color: var(--white);
 }
 .weatherForm input:hover {
-    border: 1px solid #ffae2b;
+    border: 1px solid var(--yellow-color);
 }
 .weatherForm input:focus {
-    background-color: #00ffc8;
+    background-color: var(--green);
 }
 .weatherForm_button {
     width: 100%;
     height: 40px;
-    background: #ffae2b;
+    background: var(--yellow-color);
     font: 400 18px/25px "Old+Standard+TT";
-    color: #181511;
+    color: var(--main-bg-color);
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -60,7 +60,7 @@
     border-bottom-left-radius: 5px;
 }
 .weatherForm_button:hover {
-    border: 2px solid #00ffc8;
-    color: #00ffc8;
-    background: #786740;
+    border: 2px solid var(--green);
+    color: var(--green);
+    background: var(--weather-bg-color);
 }
