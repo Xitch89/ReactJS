@@ -18,8 +18,16 @@
     margin-bottom: 40px;
 }
 
-h1 {
+.smallText.light {
+    color: var(--core-light-color);
+}
+
+.mainText {
     font: 400 50px/60px "Old+Standard+TT";
     color: var(--yellow-color);
     margin: 40px 0 60px 0;
+}
+
+.mainText.light {
+    color: var(--core-light-color);
 }

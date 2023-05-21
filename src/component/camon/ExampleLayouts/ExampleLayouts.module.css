@@ -8,19 +8,15 @@
   justify-content: center;
 }
 
-.exampleLayouts_coreDark,
-.exampleLayouts_coreLight {
+.exampleLayouts_core {
   letter-spacing: 2px;
   text-transform: uppercase;
   font: var(--old-standart-12-22);
   margin: 120px 0 10px 0;
-}
-
-.exampleLayouts_coreDark {
   color: var(--core-dark-color);
 }
 
-.exampleLayouts_coreLight {
+.exampleLayouts_core.light {
   color: var(--core-light-color);
 }
 
@@ -37,30 +33,26 @@
 }
 
 /* Стилі текстів */
-.bigYellowTextLight,
-.bigYellowTextDark {
+.bigYellowText {
   font: var(--text-font);
   margin-bottom: 60px;
-}
-
-.bigYellowTextLight {
-  color: var(--core-light-color);
-}
-
-.bigYellowTextDark {
   color: var(--yellow-color);
 }
 
+.bigYellowText.light {
+  color: var(--core-light-color);
+}
+
 @media (max-width: 400px) {
-  .bigYellowTextLight,
-  .bigYellowTextDark {
+  .bigYellowText.light,
+  .bigYellowText {
     font: var(--old-standart-30-40);
   }
 }
 
 @media (max-width: 320px) {
-  .bigYellowTextLight,
-  .bigYellowTextDark {
+  .bigYellowText.light,
+  .bigYellowText {
     margin-bottom: 35px;
   }
 }

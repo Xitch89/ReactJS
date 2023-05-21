@@ -56,8 +56,7 @@
   }
 }
 
-.checkBoxContainerDark,
-.checkBoxContainerLight {
+.checkBoxContainer {
   display: block;
   position: relative;
   padding-left: 35px;
@@ -69,32 +68,29 @@
   -ms-user-select: none;
   user-select: none;
   font: var(--old-standart-25-35);
-}
-
-.checkBoxContainerDark {
   color: var(--core-dark-color);
 }
 
-.checkBoxContainerLight {
+.checkBoxContainer.light {
   color: var(--core-light-color);
 }
 
 @media (max-width: 320px) {
-  .checkBoxContainerDark,
-  .checkBoxContainerLight {
+  .checkBoxContainer,
+  .checkBoxContainer.light {
     font: var(--old-standart-15-25);
   }
 }
 
 /* Hide the browser's default checkbox */
-.checkBoxContainerDark input {
+.checkBoxContainer input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
 }
-.checkBoxContainerLight input {
+.checkBoxContainer input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -119,18 +115,18 @@
 }
 
 /* On mouse-over, add a grey background color */
-.checkBoxContainerDark:hover input ~ .checkmark {
+.checkBoxContainer:hover input ~ .checkmark {
   background-color: var(--medium-gray);
 }
-.checkBoxContainerLight:hover input ~ .checkmark {
+.checkBoxContainer:hover input ~ .checkmark {
   background-color: var(--medium-gray);
 }
 
 /* When the checkbox is checked, add a blue background */
-.checkBoxContainerDark input:checked ~ .checkmark {
+.checkBoxContainer input:checked ~ .checkmark {
   background-color:  var(--yellow-color);
 }
-.checkBoxContainerLight input:checked ~ .checkmark {
+.checkBoxContainer input:checked ~ .checkmark {
   background-color:  var(--yellow-color);
 }
 
@@ -142,15 +138,15 @@
 }
 
 /* Show the checkmark when checked */
-.checkBoxContainerDark input:checked ~ .checkmark:after {
+.checkBoxContainer input:checked ~ .checkmark:after {
   display: block;
 }
-.checkBoxContainerLight input:checked ~ .checkmark:after {
+.checkBoxContainer input:checked ~ .checkmark:after {
   display: block;
 }
 
 /* Style the checkmark/indicator */
-.checkBoxContainerDark .checkmark:after {
+.checkBoxContainer .checkmark:after {
   left: 6px;
   top: 1px;
   width: 8px;
@@ -161,7 +157,7 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-.checkBoxContainerLight .checkmark:after {
+.checkBoxContainer .checkmark:after {
   left: 6px;
   top: 1px;
   width: 8px;

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 import classes from './SubscribeBlock.module.css';
 import { ThemeContext } from '../Layout';
 
@@ -10,13 +11,13 @@ function SubscribeBlock() {
   return (
     <div className={classes.subscribeBlock}>
       <p 
-        className={theme === 'light' ? classes.subscribeBlock_YellowTextLight : classes.subscribeBlock_YellowTextDark}
+        className={cn(classes.subscribeBlock_YellowText, { [classes.light]: theme === 'light' })}
       >
         {t('subscribeToAtelier')}
         <br />
         {t('newsletter')}
       </p>
-      <p className={theme === 'light' ? classes.subscribeBlock_someTextLight : classes.subscribeBlock_someTextDark}>
+      <p className={cn(classes.subscribeBlock_someText, { [classes.light]: theme === 'light' })}>
         {t('newsletterText')}
       </p>
       <form className={classes.subscribe} action="#" method="post">
@@ -25,7 +26,7 @@ function SubscribeBlock() {
           {t('subscribeButton')}
         </button>
       </form>
-      <p className={theme === 'light' ? classes.sub_expl_btnLight : classes.sub_expl_btnDark}>
+      <p className={cn(classes.sub_expl_btn, { [classes.light]: theme === 'light' })}>
         {t('termsAgreement')}
       </p>
     </div>

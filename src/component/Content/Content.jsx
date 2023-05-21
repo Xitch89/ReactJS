@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 import classes from './css/Content.module.css';
 import postData from '../../constants/postData';
 import Post from './ContentPost';
@@ -206,7 +207,7 @@ function Content() {
       <div className={classes.checkBox}>
         <label 
           htmlFor="alphabet" 
-          className={theme === 'light' ? classes.checkBoxContainerLight : classes.checkBoxContainerDark}
+          className={cn(classes.checkBoxContainer, { [classes.light]: theme === 'light', })}
         >
           <input
             id="alphabet" 
@@ -219,7 +220,7 @@ function Content() {
         </label>
         <label 
           htmlFor="checkboxDate" 
-          className={theme === 'light' ? classes.checkBoxContainerLight : classes.checkBoxContainerDark}
+          className={cn(classes.checkBoxContainer, { [classes.light]: theme === 'light', })}
         >
           <input
             id="checkboxDate" 
@@ -232,7 +233,7 @@ function Content() {
         </label> 
         <label 
           htmlFor="lessThan10" 
-          className={theme === 'light' ? classes.checkBoxContainerLight : classes.checkBoxContainerDark}
+          className={cn(classes.checkBoxContainer, { [classes.light]: theme === 'light', })}
         >
           <input
             id="lessThan10" 

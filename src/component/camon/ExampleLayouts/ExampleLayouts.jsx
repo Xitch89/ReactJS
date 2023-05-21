@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import cn from 'classnames';
 import classes from './ExampleLayouts.module.css';
 import { ThemeContext } from '../../Layout';
 
@@ -9,11 +10,11 @@ function ExampleLayouts({ grayText, yellowText }) {
   return (
     <div className={classes.exampleLayouts}>
       <p 
-        className={theme === 'light' ? classes.exampleLayouts_coreLight : classes.exampleLayouts_coreDark}
+        className={cn(classes.exampleLayouts_core, { [classes.light]: theme === 'light', })}
       >
         {grayText}
       </p>
-      <p className={theme === 'light' ? classes.bigYellowTextLight : classes.bigYellowTextDark}>{yellowText}</p>
+      <p className={cn(classes.bigYellowText, { [classes.light]: theme === 'light', })}>{yellowText}</p>
     </div>
   );
 }
