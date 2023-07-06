@@ -8,6 +8,24 @@
     width: 20%;
 }
 
+@media (max-width: 565px) {
+  .weatherForm {
+    width: 24%;
+  } 
+}
+
+@media (max-width: 400px) {
+  .weatherForm {
+    width: 35%;
+  } 
+}
+
+@media (max-width: 320px) {
+  .weatherForm {
+    width: 43%;
+  } 
+}
+
 .formWrapper {
     margin: 0 0 30px 120px;
 }

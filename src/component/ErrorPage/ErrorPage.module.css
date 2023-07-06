@@ -1,3 +1,4 @@
+
 .error_page_container {
     height: 100%;
     width: 100%;
@@ -11,11 +12,20 @@
     align-items: center;
     align-content: center;
     margin: 10% 0 10% 0;
-}
-
-.error_massage {
-    color: rgb(199, 233, 180);
+    color: red;
     font: var(--old-standart-45-65);
 }
+/* .error_page h1 {
+    color: var(--red);
+} */
+
+.error_massage {
+    /* color: var(--white); */
+    font: var(--old-standart-45-65);
+}
+
+/* .error_massage.light {
+    color: var(--core-light-color);
+} */
 
 /* додати медіа*/

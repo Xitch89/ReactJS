@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import ReactSwitch from 'react-switch';
+// import Switch from 'react-switch';
 import { useTranslation } from 'react-i18next';
 import classes from './Header.module.css';
+import SwitchButton from '../HandleChange/SwitchButton';
 
 function Header({ toggleTheme, theme }) {
   const { t, i18n } = useTranslation();
@@ -63,7 +64,7 @@ function Header({ toggleTheme, theme }) {
           >
             {theme === 'dark' ? t('darkMode') : t('lightMode')}
           </label>
-          <ReactSwitch id="switchMode" onChange={toggleTheme} checked={theme === 'dark'} />
+          <SwitchButton toggleTheme={toggleTheme} theme={theme} />
         </div>
         <Link className={classes.transparent_header_buyTemplate} to="404">
           {t('buyTemplate')}
@@ -71,7 +72,7 @@ function Header({ toggleTheme, theme }) {
         <button 
           key={i18n.language} 
           type="button" 
-          className={classes.leng} 
+          className={classes.leng}
           onClick={() => changeLanguage(i18n.language === 'en' ? 'ua' : 'en')}
         >
           {i18n.language.toUpperCase()}

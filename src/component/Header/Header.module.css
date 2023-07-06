@@ -67,7 +67,7 @@ ul {
   justify-content: center;
   font: var(--old-standart-11-22);
   color: var(--yellow-color);
-  margin-right: 40;
+  margin-right: -15px;
   box-sizing: border-box;
   width: 147px;
   height: 52px;
@@ -83,6 +83,19 @@ ul {
   border: 2px solid var(--green);
   color: var(--green);
 }
+
+@media (max-width: 1200px) {
+  .transparent_header_buyTemplate {
+    position: relative;
+    margin-right: 1%;
+  }
+  .transparent_header_other {
+    margin-right: 20px;
+  }
+  .themeMode {
+    margin-right: 1%;
+  }
+}
 @media (max-width: 991px) {
   .transparent_header_logo {
     margin: 0;
@@ -95,13 +108,18 @@ ul {
   }
   .transparent_header_buyTemplate {
     position: relative;
-    margin-right: 60px;
+    margin-right: -1%;
+  }
+}
+@media (max-width: 767px) {
+  .transparent_header_buyTemplate {
+    margin-right: 1%;
   }
 }
 @media (max-width: 565px) {
   .transparent_header_buyTemplate {
-    margin-right: 30px;
-    width: 100px;
+    margin-right: 1%;
+    width: 75px;
     height: 35px;
   }
 }
@@ -245,7 +263,49 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 22%;
+  margin-left: 13%;
+}
+@media (max-width: 991px) {
+  .themeMode {
+    margin-left: 55%;
+  } 
+}
+
+@media (max-width: 767px) {
+  .themeMode {
+    margin-left: 45%;
+  } 
+}
+
+@media (max-width: 565px) {
+  .themeMode {
+    margin-left: 40%;
+  } 
+}
+
+@media (max-width: 320px) {
+  .themeMode {
+    margin-left: 30%;
+  } 
+}
+
+.switch_input {
+  display: none;
+}
+
+.switch_input {
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 34px;
+}
+
+.switch_input::before {
+  content: "";
+  width: 60px;
+  height: 34px;
+  border-radius: 34px;
+  background-color: #675757;
 }
 
 .switchLabel {
@@ -254,12 +314,33 @@ ul {
   margin-right: 20px;
 }
 
+@media (max-width: 767px) {
+  .switchLabel {
+    margin-right: 5px;
+  } 
+}
+@media (max-width: 400px) {
+  .switchLabel {
+    display: none;
+  } 
+}
+
 .leng {
   font: var(--old-standart-12-20);
   color: var(--core-light-color);
   background-color: var(--yellow-color);
   border-radius: 11px;
-  margin-right: 40px;
+  margin-right: 120px;
   width: 24px;
   height: 24px;
+}
+@media (max-width: 991px) {
+  .leng {
+    margin-right: 65px;
+  }
+}
+@media (max-width: 565px) {
+  .leng {
+    margin-right: 30px;
+  }
 }

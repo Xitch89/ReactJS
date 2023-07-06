@@ -16,10 +16,10 @@ import { API_KEY } from '../../constants/constants';
 
 function Home() {
   const { t } = useTranslation();
-  function getWeatherErrorGif(errorMessage) {
+  function getWeatherErrorGif() {
     return (
       <div className={classes.weatherErrorGif}>
-        <p>{errorMessage}</p>
+        <p>{t('errorMas')}</p>
         <img
           src="https://i.gifer.com/FZ26.gif"
           alt="Gif 404"
@@ -58,7 +58,7 @@ function Home() {
     } catch (error) {
       setWeatherData({
         city: undefined,
-        error: getWeatherErrorGif(t('errorMas')),
+        error: getWeatherErrorGif(),
       });
     }
   };

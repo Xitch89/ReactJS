@@ -4,6 +4,7 @@
   --core-light-color: #000000;
   --core-dark-color: #aca592;
   --yellow-color: #ffae2b;
+  --red: #de0000;
   --bg-color: rgba(17, 16, 16, 0.8);
   --header-bg-color: rgba(0, 0, 0, 0.8);
   --box-shadow: rgba(0, 0, 0, 0.4);
@@ -155,10 +156,12 @@ h6 {
 
 #dark {
     background: var(--main-bg-color);
+    transition: background-color 0.8s ease;
 }
 
 #light {
     background: var(--main-bg-light-color);
+    transition: background-color 0.8s ease;
 }
 
 /*flax-box*/

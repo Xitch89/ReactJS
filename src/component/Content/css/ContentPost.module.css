@@ -5,7 +5,7 @@
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  font: var(old-standart-13-23);
+  font: var(--old-standart-13-23);
   color: var(--white);
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -17,6 +17,6 @@
   flex-wrap: wrap;
   justify-content: flex-end;
   align-items: flex-end;
-  font: var(old-standart-13-23);
+  font: var(--old-standart-13-23);
   color: var(--white);
 }
