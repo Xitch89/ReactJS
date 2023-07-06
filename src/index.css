@@ -156,12 +156,12 @@ h6 {
 
 #dark {
     background: var(--main-bg-color);
-    transition: background-color 0.8s ease;
+    transition: background-color 0.7s ease;
 }
 
 #light {
     background: var(--main-bg-light-color);
-    transition: background-color 0.8s ease;
+    transition: background-color 0.7s ease;
 }
 
 /*flax-box*/
