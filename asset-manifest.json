@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ReactJS/static/css/main.7f9fb064.css",
-    "main.js": "/ReactJS/static/js/main.1001e2ff.js",
+    "main.css": "/ReactJS/static/css/main.b1debbce.css",
+    "main.js": "/ReactJS/static/js/main.653aaf49.js",
     "static/js/787.28cb0dcd.chunk.js": "/ReactJS/static/js/787.28cb0dcd.chunk.js",
     "static/media/title-image.jpg": "/ReactJS/static/media/title-image.d190f4d6fbf1db3aa5d7.jpg",
     "static/media/bottom_image.jpg": "/ReactJS/static/media/bottom_image.2716269116cc88a047c7.jpg",
@@ -33,23 +33,23 @@
     "static/media/licenses.png": "/ReactJS/static/media/licenses.5b78d6b723949348f4db.png",
     "static/media/contact_us.png": "/ReactJS/static/media/contact_us.82f422984e760c414646.png",
     "static/media/insta-img.svg": "/ReactJS/static/media/insta-img.fbc5eb2003a6e7863103d9f3e1ce0071.svg",
-    "static/media/instagram.svg": "/ReactJS/static/media/instagram.ddb30ea5f990813baa7e04984a11d6c4.svg",
-    "static/media/twitter.svg": "/ReactJS/static/media/twitter.95e0fb0e7d9dc1684dac28abd6be00e8.svg",
+    "static/media/instagram.svg": "/ReactJS/static/media/instagram.88d81d8eb7f41be7e843dedc8decb036.svg",
+    "static/media/twitter.svg": "/ReactJS/static/media/twitter.e37e262c0e6ce6236e574bea5e53ee4c.svg",
     "index.html": "/ReactJS/index.html",
-    "static/media/linked.svg": "/ReactJS/static/media/linked.2f9cc57b1bbf7e658a7648735e33729c.svg",
+    "static/media/linked.svg": "/ReactJS/static/media/linked.eacfdca67456ac0a9e1ad1983d47a427.svg",
     "static/media/circle.svg": "/ReactJS/static/media/circle.a477ff61da8fe684ed59e5c0cb6fc8b0.svg",
     "static/media/hemisphere.svg": "/ReactJS/static/media/hemisphere.55cd306f844225beb1b2fd988474ca74.svg",
-    "static/media/facebook.svg": "/ReactJS/static/media/facebook.5625dd23e79eaf15a7fa54f79c557fa9.svg",
+    "static/media/facebook.svg": "/ReactJS/static/media/facebook.9e805484c20e412118c76ec676c6e030.svg",
     "static/media/hemisphere2.svg": "/ReactJS/static/media/hemisphere2.09c193d1705ef225c306011fec6a07ec.svg",
     "static/media/triangle.svg": "/ReactJS/static/media/triangle.3a17b63a0e6030500378d6084b79dbe8.svg",
     "static/media/ruby.svg": "/ReactJS/static/media/ruby.7d50df7ce26bda91a6637c9c5d864746.svg",
     "static/media/square.svg": "/ReactJS/static/media/square.ff7a7b1bc8e2156df33fd2c80aadb190.svg",
-    "main.7f9fb064.css.map": "/ReactJS/static/css/main.7f9fb064.css.map",
-    "main.1001e2ff.js.map": "/ReactJS/static/js/main.1001e2ff.js.map",
+    "main.b1debbce.css.map": "/ReactJS/static/css/main.b1debbce.css.map",
+    "main.653aaf49.js.map": "/ReactJS/static/js/main.653aaf49.js.map",
     "787.28cb0dcd.chunk.js.map": "/ReactJS/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f9fb064.css",
-    "static/js/main.1001e2ff.js"
+    "static/css/main.b1debbce.css",
+    "static/js/main.653aaf49.js"
   ]
 }
