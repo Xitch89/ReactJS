@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-// import Switch from 'react-switch';
 import { useTranslation } from 'react-i18next';
+import { HiMenu, HiMenuAlt1 } from 'react-icons/hi';
 import classes from './Header.module.css';
 import SwitchButton from '../HandleChange/SwitchButton';
 
 function Header({ toggleTheme, theme }) {
+  const [burger, setBurger] = useState(false);
   const { t, i18n } = useTranslation();
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -16,13 +17,11 @@ function Header({ toggleTheme, theme }) {
     <div className={classes.wrapper}>
       <header>
         <div>
-          <nav className={classes.navBar}>
-            <div className={classes.toggleMenu}>
-              <div className="line line1" />
-              <div className="line line2" />
-              <div className="line line3" />
-            </div>
-              
+          <button type="button" onClick={() => setBurger(!burger)} className={classes.burgerContainer}>
+            {burger ? <HiMenuAlt1 className={classes.burgerButtonAlt} size={45} />
+              : <HiMenu className={classes.burgerButton} size={45} />}
+          </button>
+          <nav className={`${classes.navBar} ${burger ? classes.active : classes.inactive}`}>
             <ul className={classes.navList}>
               <li>
                 <Link className={classes.transparent_header_logo} to="/">
