@@ -35,7 +35,13 @@
   border-radius: 34px;
   border: 2px solid var(--yellow-color);
   background-color: var(--medium-gray);
-  transition: background-color 0.2s ease;
+}
+
+.active {
+  transition: transform 0.7s ease, opacity 0.7s ease;
+}
+.inactive {
+  transition: transform 0.7s ease, opacity 0.7s ease;
 }
 
 .switch_slaider::before {

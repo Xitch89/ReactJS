@@ -19,7 +19,7 @@ function SwitchButton({ toggleTheme, theme }) {
         checked={checked}
         onChange={handleChange}
       />
-      <span className={`${classes.switch_slaider} ${checked ? classes.active : ''}`} />
+      <span className={`${classes.switch_slaider} ${checked ? classes.active : classes.inactive}`} />
     </label>
   );
 }

@@ -75,7 +75,7 @@
   color: var(--core-light-color);
 }
 
-@media (max-width: 320px) {
+@media (max-width: 400px) {
   .checkBoxContainer,
   .checkBoxContainer.light {
     font: var(--old-standart-15-25);
@@ -83,13 +83,6 @@
 }
 
 /* Hide the browser's default checkbox */
-.checkBoxContainer input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
 .checkBoxContainer input {
   position: absolute;
   opacity: 0;
@@ -106,6 +99,12 @@
   height: 20px;
   width: 20px;
   background-color: var(--checkmark-bg-color);
+}
+
+@media (max-width: 400px) {
+  .checkmark {
+  top: 0;
+  }
 }
 
 @media (max-width: 320px) {
