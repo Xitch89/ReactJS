@@ -18,6 +18,14 @@ header {
   }
 }
 
+.rightNav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
 ul {
   display: flex;
   flex-direction: row;
@@ -67,7 +75,7 @@ ul {
   justify-content: center;
   font: var(--old-standart-11-22);
   color: var(--yellow-color);
-  margin-right: -15px;
+  margin-right: 15px;
   box-sizing: border-box;
   width: 147px;
   height: 52px;
@@ -85,15 +93,8 @@ ul {
 }
 
 @media (max-width: 1200px) {
-  .transparent_header_buyTemplate {
-    position: relative;
-    margin-right: 1%;
-  }
   .transparent_header_other {
     margin-right: 20px;
-  }
-  .themeMode {
-    margin-right: 1%;
   }
 }
 @media (max-width: 991px) {
@@ -106,26 +107,16 @@ ul {
   .transparent_header_other {
     margin: 0;
   }
-  .transparent_header_buyTemplate {
-    position: relative;
-    margin-right: -1%;
-  }
 }
-@media (max-width: 767px) {
-  .transparent_header_buyTemplate {
-    margin-right: 1%;
-  }
-}
+
 @media (max-width: 565px) {
   .transparent_header_buyTemplate {
-    margin-right: 1%;
     width: 75px;
     height: 35px;
   }
 }
 @media (max-width: 400px) {
   .transparent_header_buyTemplate {
-    margin-right: 30px;
     width: 90px;
     height: 30px;
   }
@@ -246,37 +237,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 13%;
-}
-@media (max-width: 991px) {
-  .themeMode {
-    margin-left: 45%;
-  } 
-}
-
-@media (max-width: 767px) {
-  .themeMode {
-    margin-left: 45%;
-  } 
-}
-
-@media (max-width: 565px) {
-  .themeMode {
-    margin-left: 40%;
-  } 
-}
-
-@media (max-width: 400px) {
-  .themeMode {
-    margin-right: 25px;
-    margin-left: 10%;
-  } 
-}
-
-@media (max-width: 320px) {
-  .themeMode {
-    margin-left: 15%;
-  } 
+  margin-right: 15px;
 }
 
 .switch_input {
@@ -307,12 +268,12 @@ ul {
 @media (max-width: 767px) {
   .switchLabel {
     margin-right: 5px;
-  } 
+  }
 }
 @media (max-width: 400px) {
   .switchLabel {
     display: none;
-  } 
+  }
 }
 
 .leng {

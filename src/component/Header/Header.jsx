@@ -4,22 +4,23 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { HiMenu, HiMenuAlt1 } from 'react-icons/hi';
 import classes from './Header.module.css';
-import SwitchButton from '../HandleChange/SwitchButton';
+import SwitchButton from '../SwitchButton/SwitchButton';
 
 function Header({ toggleTheme, theme }) {
   const [burger, setBurger] = useState(false);
   const { t, i18n } = useTranslation();
   const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-    localStorage.setItem('language', lng);
+    i18n.changeLanguage(lng).then(() => {
+      localStorage.setItem('language', lng);
+    });
   };
   return (
     <div className={classes.wrapper}>
       <header>
         <div>
           <button type="button" onClick={() => setBurger(!burger)} className={classes.burgerContainer}>
-            {burger ? <HiMenuAlt1 className={classes.burgerButtonAlt} size={45} />
-              : <HiMenu className={classes.burgerButton} size={45} />}
+            {burger ? <HiMenuAlt1 className={classes.burgerButtonAlt} size={40} />
+              : <HiMenu className={classes.burgerButton} size={40} />}
           </button>
           <nav className={`${classes.navBar} ${burger ? classes.active : classes.inactive}`}>
             <ul className={classes.navList}>
@@ -56,26 +57,28 @@ function Header({ toggleTheme, theme }) {
             </ul>
           </nav>
         </div>
-        <div className={classes.themeMode}>
-          <label 
-            htmlFor="switchMode" 
-            className={classes.switchLabel}
+        <div className={classes.rightNav}>
+          <div className={classes.themeMode}>
+            <label
+              htmlFor="switchMode"
+              className={classes.switchLabel}
+            >
+              {theme === 'dark' ? t('darkMode') : t('lightMode')}
+            </label>
+            <SwitchButton toggleTheme={toggleTheme} theme={theme} />
+          </div>
+          <Link className={classes.transparent_header_buyTemplate} to="404">
+            {t('buyTemplate')}
+          </Link>
+          <button
+            key={i18n.language}
+            type="button"
+            className={classes.leng}
+            onClick={() => changeLanguage(i18n.language === 'en' ? 'ua' : 'en')}
           >
-            {theme === 'dark' ? t('darkMode') : t('lightMode')}
-          </label>
-          <SwitchButton toggleTheme={toggleTheme} theme={theme} />
+            {i18n.language.toUpperCase()}
+          </button>
         </div>
-        <Link className={classes.transparent_header_buyTemplate} to="404">
-          {t('buyTemplate')}
-        </Link>
-        <button 
-          key={i18n.language} 
-          type="button" 
-          className={classes.leng}
-          onClick={() => changeLanguage(i18n.language === 'en' ? 'ua' : 'en')}
-        >
-          {i18n.language.toUpperCase()}
-        </button>
       </header>
     </div>
   );

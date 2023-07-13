@@ -90,7 +90,7 @@
 
 @media (max-width: 767px) {
   .switch_input:checked + .switch_slaider::before {
-    transform: translateX(13px);
+    transform: translateX(20px);
   } 
 }
 

@@ -55,7 +55,8 @@
     "@babel/plugin-transform-react-jsx": "^7.21.0",
     "eslint": "^8.35.0",
     "eslint-config-airbnb": "^19.0.4",
-    "gh-pages": "^5.0.0"
+    "gh-pages": "^5.0.0",
+    "prettier": "^3.0.0"
   },
   "babel": {
     "presets": [
