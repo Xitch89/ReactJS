@@ -7,7 +7,7 @@ function ErrorPage() {
   return (
     <div className={classes.error_page_container}>
       <div className={classes.error_page}>
-        <h1>{t('error')}</h1>
+        <h1 className={classes.first_error_massage}>{t('error')}</h1>
         <p className={classes.error_massage}>{t('errorMasseg')}</p>
       </div>
     </div>

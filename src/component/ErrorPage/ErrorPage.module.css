@@ -11,21 +11,26 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    margin: 10% 0 10% 0;
+    margin: 80px 0 56px 0;
     color: red;
     font: var(--old-standart-45-65);
 }
-/* .error_page h1 {
-    color: var(--red);
-} */
-
-.error_massage {
-    /* color: var(--white); */
+.first_error_massage {
+    margin-top: 25px;
     font: var(--old-standart-45-65);
 }
+.error_massage {
+    font: var(--old-standart-45-65);
+}
+@media (max-width: 565px) {
+    .error_massage {
+        font: var(--old-standart-22-28);
+    }
+    .first_error_massage {
+        font: var(--old-standart-25-35);
+    }
+    .error_page {
+        margin-top: 60px;
+    }
+}
 
-/* .error_massage.light {
-    color: var(--core-light-color);
-} */
-
-/* додати медіа*/
