@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -14,11 +14,35 @@ function Header({ toggleTheme, theme }) {
       localStorage.setItem('language', lng);
     });
   };
+  const wrapperRef = useRef(null);
+
+  const handleBurgerClick = (event) => {
+    event.stopPropagation();
+    setBurger((prevBurger) => !prevBurger);
+  };
+
+  useEffect(() => {
+    const handleWindowClick = (event) => {
+      if (
+        wrapperRef.current
+        && !wrapperRef.current.contains(event.target)
+        && !event.target.closest(`.${classes.burgerContainer}`)
+      ) {
+        setBurger(false);
+      }
+    };
+
+    window.addEventListener('click', handleWindowClick);
+
+    return () => {
+      window.removeEventListener('click', handleWindowClick);
+    };
+  }, []);
   return (
-    <div className={classes.wrapper}>
+    <div>
       <header>
-        <div>
-          <button type="button" onClick={() => setBurger(!burger)} className={classes.burgerContainer}>
+        <div ref={wrapperRef}>
+          <button type="button" onClick={handleBurgerClick} className={classes.burgerContainer}>
             {burger ? <HiMenuAlt1 className={classes.burgerButtonAlt} size={40} />
               : <HiMenu className={classes.burgerButton} size={40} />}
           </button>
