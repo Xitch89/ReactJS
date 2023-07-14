@@ -47,7 +47,20 @@
     margin-bottom: 15px;
 }
 
-.weatherForm input {
+/*.weatherForm input {*/
+/*    width: 100%;*/
+/*    height: 40px;*/
+/*    padding: 20px;*/
+/*    box-sizing: border-box;*/
+/*    -moz-box-sizing: border-box;*/
+/*    -webkit-box-sizing: border-box;*/
+/*    border-top-right-radius: 5px;*/
+/*    border-top-left-radius: 5px;*/
+/*    border: 1px solid var(--border-color);*/
+/*    background-color: var(--white);*/
+/*}*/
+
+.input_field {
     width: 100%;
     height: 40px;
     padding: 20px;
@@ -58,7 +71,15 @@
     border-top-left-radius: 5px;
     border: 1px solid var(--border-color);
     background-color: var(--white);
+    font: var(--old-standart-15-26);
 }
+
+/*@media (max-width: 767px) {*/
+/*    .input_field {*/
+/*        font: var(--old-standart-11-22);*/
+/*    }*/
+/*}*/
+
 .weatherForm input:hover {
     border: 1px solid var(--yellow-color);
 }

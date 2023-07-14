@@ -13,7 +13,7 @@ function SearchWeather({ weatherMethod }) {
         alt="gif 404" 
       />
       <form className={classes.weatherForm} onSubmit={weatherMethod}>
-        <input type="text" name="city" placeholder={t('enterCity')} />
+        <input className={classes.input_field} type="text" name="city" placeholder={t('enterCity')} />
         <button className={classes.weatherForm_button} type="submit"> 
           {t('search')}
         </button>

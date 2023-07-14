@@ -45,7 +45,7 @@ export default {
   temp: 'Temp:',
   wind: 'Wind:',
   humidity: 'Humidity:',
-  enterCity: 'Enter you city',
+  enterCity: 'You city',
   search: 'Search',
   grayTextBig: 'Suspendisse varius enim in',
   grayTextSmall: 'cursus id rutrum imperdiet. eros elementum tristique.',
