@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import classes from './WeatherInfo.module.css';
-import { ThemeContext } from '../../Layout';
+import { ThemeContext } from '../../Layout/Layout';
 
 function WeatherInfo({
   humidity, city, temp, wind, error 

@@ -3,7 +3,7 @@ import {
   createHashRouter, createRoutesFromElements, Route, RouterProvider 
 } from 'react-router-dom';
 import Home from './component/Home/Home';
-import Layout from './component/Layout';
+import Layout from './component/Layout/Layout';
 import ErrorPage from './component/ErrorPage/ErrorPage';
 import Landing1 from './component/DetailedPage/LandingVr1';
 import Landing2 from './component/DetailedPage/LandingVr2';

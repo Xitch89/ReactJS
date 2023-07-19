@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 import classes from './SubscribeBlock.module.css';
-import { ThemeContext } from '../Layout';
+import { ThemeContext } from '../Layout/Layout';
 
 function SubscribeBlock() {
   const { theme } = useContext(ThemeContext);

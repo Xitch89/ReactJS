@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { PropTypes } from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import classes from './css/ourServicesPost.module.css';
-import { ThemeContext } from '../Layout';
+import { ThemeContext } from '../Layout/Layout';
 
 function PostOurServices({ 
   upperSvg, lowerSvg, 

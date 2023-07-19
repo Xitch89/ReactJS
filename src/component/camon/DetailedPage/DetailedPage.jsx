@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import classes from './DetailPage.module.css';
-import { ThemeContext } from '../../Layout';
+import { ThemeContext } from '../../Layout/Layout';
 
 function DetailedPage({ weyImage, mainText, sumText }) {
   const theme = useContext(ThemeContext);

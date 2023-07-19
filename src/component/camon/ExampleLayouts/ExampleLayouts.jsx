@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import classes from './ExampleLayouts.module.css';
-import { ThemeContext } from '../../Layout';
+import { ThemeContext } from '../../Layout/Layout';
 
 function ExampleLayouts({ grayText, yellowText }) {
   const { theme } = useContext(ThemeContext);

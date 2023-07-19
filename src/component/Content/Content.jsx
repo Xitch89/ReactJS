@@ -5,7 +5,7 @@ import classes from './css/Content.module.css';
 import postData from '../../constants/postData';
 import Post from './ContentPost';
 import { ARROW_UP_KEY_CODE, ARROW_DOWN_KEY_CODE } from '../../constants/constants';
-import { ThemeContext } from '../Layout';
+import { ThemeContext } from '../Layout/Layout';
 
 // 
 function Content() {

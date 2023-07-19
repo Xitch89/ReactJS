@@ -8,7 +8,7 @@ import SocImg4 from '../../assets/images/soc_img4.jpg';
 import SocImg3 from '../../assets/images/soc_img3.jpg';
 import { ReactComponent as InstaImg } from '../../assets/icons/insta-img.svg';
 import RefButton from '../camon/RefButton';
-import { ThemeContext } from '../Layout';
+import { ThemeContext } from '../Layout/Layout';
 
 function FollowSocial() {
   const { theme } = useContext(ThemeContext);
