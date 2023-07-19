@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import LandingVr3 from '../../assets/image_detail_page/landing_vr2.jpg';
+import LandingVr3 from '../../assets/image_detail_page/landing_vr3.jpg';
 import DetailedPage from '../camon/DetailedPage/DetailedPage';
 import withScrollToTop from '../withScrollToTop';
 
