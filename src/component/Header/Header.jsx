@@ -1,4 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { 
+  useEffect, useId, useRef, useState 
+} from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -15,6 +17,7 @@ function Header({ toggleTheme, theme }) {
     });
   };
   const wrapperRef = useRef(null);
+  const switchModeID = useId();
 
   const handleBurgerClick = (event) => {
     event.stopPropagation();
@@ -84,7 +87,7 @@ function Header({ toggleTheme, theme }) {
         <div className={classes.rightNav}>
           <div className={classes.themeMode}>
             <label
-              htmlFor="switchMode"
+              htmlFor={switchModeID}
               className={classes.switchLabel}
             >
               {theme === 'dark' ? t('darkMode') : t('lightMode')}

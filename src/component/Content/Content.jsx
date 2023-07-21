@@ -1,4 +1,6 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, {
+  useEffect, useState, useContext, useId 
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 import classes from './css/Content.module.css';
@@ -20,6 +22,9 @@ function Content() {
   const [activeEvent, setActiveEvent] = useState([]);
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
+  const alphabetID = useId();
+  const checkboxDateID = useId();
+  const lessThan10ID = useId();
 
   const handleKeyDown = (e) => {
     const keyCode = e.keyCode || e.which;
@@ -206,11 +211,11 @@ function Content() {
     <div>
       <div className={classes.checkBox}>
         <label 
-          htmlFor="alphabet" 
+          htmlFor={alphabetID} 
           className={cn(classes.checkBoxContainer, { [classes.light]: theme === 'light', })}
         >
           <input
-            id="alphabet" 
+            id={alphabetID}
             type="checkbox" 
             checked={isAlphabetChecked} 
             onChange={handleCheckboxAlphabetChange}
@@ -219,11 +224,11 @@ function Content() {
           <span className={classes.checkmark} />
         </label>
         <label 
-          htmlFor="checkboxDate" 
+          htmlFor={checkboxDateID} 
           className={cn(classes.checkBoxContainer, { [classes.light]: theme === 'light', })}
         >
           <input
-            id="checkboxDate" 
+            id={checkboxDateID} 
             type="checkbox" 
             checked={isDateChecked} 
             onChange={handleCheckboxDateChange}
@@ -232,11 +237,11 @@ function Content() {
           <span className={classes.checkmark} />
         </label> 
         <label 
-          htmlFor="lessThan10" 
+          htmlFor={lessThan10ID} 
           className={cn(classes.checkBoxContainer, { [classes.light]: theme === 'light', })}
         >
           <input
-            id="lessThan10" 
+            id={lessThan10ID}
             type="checkbox" 
             checked={isLessChecked} 
             onChange={handleCheckboxLessThan10} 
